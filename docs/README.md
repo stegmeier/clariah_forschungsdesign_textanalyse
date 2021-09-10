@@ -1,4 +1,4 @@
-# Forschungsdesign "korpusbasierte Textanalyse": Ein Figurenverzeichnis anhand automatischer Personenenerkennung erstellen <!-- omit in toc -->
+# Inhalt <!-- omit in toc -->
 
 - [1. Abstract](#1-abstract)
 - [2. Vorüberlegungen](#2-vorüberlegungen)
@@ -134,7 +134,7 @@ Da es sich bei "Rottenmeier" und "Sesemann" um Nachnamen handelt, wäre es von V
 
 Allerdings stimmt die Anzahl der Fundstellen nicht überein: "Rottenmeier" kommt 135 mal im Korpus vor, "Fräulein Rottenmeier" jedoch nur 127 mal. Es muss also acht Okkurrenzen von "Rottenmeier" geben, denen ein anderes Wort als "Fräulein" vorangeht. Um diese zu finden, muss also die Suchanfrage `[token="Fräulein"] . [token="Rottenmeier"]` so manipuliert werden, dass alle Okkurrenzen von _Nicht "Fräulein" gefolgt von "Rottenmeier"_ gefunden werden. Als Suchanfrage formuliert sieht das so aus: `[token!="Fräulein"] . [token="Rottenmeier"]`. Die Kombination aus Ausrufezeichen und Gleichheitszeichen wird als "nicht gleich" interpretiert. Das Ergebnis der Anfrage ist:
 
-{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für _Nicht 'Fräulein' gefolgt von 'Rottenmeier'_." %}
+{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für <span class="italic">Nicht \"Fräulein\" gefolgt von 'Rottenmeier'</span>." %}
 
 Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im Figurenverzeichnis nun in "Fräulein Rottenmeier" geändert werden. 
 
