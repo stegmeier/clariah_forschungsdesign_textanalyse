@@ -35,6 +35,7 @@ Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, 
 
 Das Figurenverzeichnis soll neben den Namen der Figuren auch Ausschnitte aus dem Text präsentieren, die die jeweilige Figur möglichst gut charakterisieren.
 
+<div class="todo">
 TODO:
 - evtl. weitere Absichten ergänzen
   - Netzwerk
@@ -43,14 +44,17 @@ TODO:
       - curl https://lobid.org/gnd/search?q=Heidi -o "test_heidi_gnd.txt" findet zwar allerhand Zeug, darunter auch Verweise auf das Buch, mir ist aber noch nicht gelungen, die Abfrage auf die Figur "Heidi" zu beschränken
       - Laut Wikipedia kann der Entitätentyp "Person" (Kürzel: "p") weiter unterteilt werden, wobei literarische Figuren als "pxl" codiert werden (s. https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entit%C3%A4tencodierung")
       - wie dies als Filter eingesetzt wird, habe ich aber noch nicht verstanden
-      - 
+
+</div>
 
 # 3. Text finden
+<div class="todo">
 TODO:
 - beschreiben, welche Art Date
 - die großen Möglichkeiten nennen und eine daraus auswählen
   - TextGrid
   - DTA
+</div>
 
 ## Text vorbereiten
 Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. erlaubt, das Auftreten und die Charakterisierung von Figuren im Verlauf der Handlung zu beschreiben. Die Zerlegung in Kapitel folgt dabei der Überlegung, dass die Einteilung in Kapitel in konventionellen Romanen in einer Beziehung zum Handlungsfortschritt steht. Dies kann beim ausgewählten Text unterstellt werden, da er eine fortschreitende Handlung erzählt, also z. B. keines der Kapitel einen Rückblick auf vorangegangene Ereignisse bietet.
@@ -60,8 +64,10 @@ Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell mac
 
 {% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von _Heidi_ auf der Webseite von _Projekt Gutenberg_" %}
 
-
+<div class="todo">
 TODO: regex (.+\n)+ erläutern. Auf Tutorials zu Regex verweisen (auch auf Testumgebungen wie https://regexr.com/, https://regex101.com/)
+</div>
+
 Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:
 
 `[Titel des zu findenden Kapitels][Zeilenumbruch][beliebiger Text][Titel des folgenden Kapitels][Zeilenumbruch]`
@@ -78,24 +84,24 @@ Die Analyse des Textes wird in zwei großen Schritten durchgeführt, die jeweils
 
 ## Automatische Analyse
 
+<div class="todo">
 TODO: 
 - Tokenisierung, Lemmatisierung, NER beschreiben (evtl. einfach mit Screenshots)
 - mehr als nur Weblicht für Annotation zeigen? (Hinweis reicht vielleicht, mit Screenshot der Diensteliste)
 - Weblicht-Abfragen
+  </div>
 
 Für die automatische Annotation von Text steht eine [Vielzahl von Werkzeugen](https://www.clariah.de/ueber-uns/diensteliste) zur Verfügung. Unsere Forschungsfrage erfordert es, den annotierten Text durchsuchen zu können. Zusätzlich zu den Annotationswerkzeugen benötigen wir also auch eine zusätzliche Software, die dies leistet. Da es fas so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der Service [WebLicht](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page), der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über [WebLicht as a service](https://weblicht.sfs.uni-tuebingen.de/WaaS/) realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. [CQPweb](https://cwb.sourceforge.io/cqpweb.php)).
 
 
-
-
-
-
 ## Manuelle bw. semi-automatische Analyse
 
+<div class="todo">
 TODO:
 - Strategie für Weiterverarbeitung beschreiben
   - irgendwas mit häufigste Figuren werden weiterbehandelt oder so
     - Korrekturmöglichkeiten der Liste prüfen (manuelle Annotation als Tabelle oder so? In die dann auch Textkenntnis einfließen kann oder nicht. Textkenntnis evtl. über Metadatenabfrage von Bibliotheken oder Inhaltsangaben oder so)
+</div>
 
 ### Figuren identifizieren
 Das annotierte Korpus kann direkt in WebLicht oder in [TüNDRA](https://weblicht.sfs.uni-tuebingen.de/Tundra/), der _Tübingen aNnotated Data Retrieval Application_ genutzt werden. 
@@ -211,10 +217,11 @@ Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausn
 
 Relative Häufigkeiten werden für die Analyse eines einzelnen Textes auch dann wichtig, wenn dieser Text nicht mehr als Ganzes, sondern z. B. kapitelweise untersucht wird. Um prüfen zu können, ob eine Figur in einem Kapitel häufiger als in einem anderen genannt wird, genügt die absolute Häufigkeit nicht mehr, sondern sie muss in ein Verhältnis zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt werden. 
 
+<div class="todo">
 TODO:
 - zwei Kapitel zur Demonstration relativer Häufigkeiten in WebLicht untersuchen
 - relative Häufigkeiten (zu allen Tokens) von Heidi etc. berechnen  
-
+</div>
 
 ### Verteilung der Figuren über den Text
 
@@ -227,33 +234,44 @@ In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Te
 {% include image.html url="images/voyant_chapter_corp_wrong_order.png" description="Unerwartete Kapitelreihenfolge in Voyant aufgrund nicht-numerischer Interpretation der Zahlen in den Dateinamen" %}
 
 
-
+<div class="todo">
 TODO
 - WebLicht prüfen (Satzzählung)
 - Voyant
 - Ergebnis der Verteilung ist Hinweis auf Wichtigkeit (gleichmäßig = wichtig)
+</div>
+
 
 ### Aussagen über Figuren erheben
+
+<div class="todo">
 TODO:
 - Strategien beschreiben / ausprobieren
   - Kollokationen / Ko-Okkurrenzen berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern
-  - 
+</div>
 
 
 
 # 5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
+
+<div class="todo">
 TODO:
 - Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)
 - Netzwerke 
   - welche Figuren treten häufig miteinander auf?
   - welche Wörter treten häufig mit welcher Figur auf?
   - Netz aus Figuren und häufigsten Kollokationen
+</div>
+
 
 ## Erweiterungen 
 ### XML-Ressource erstellen (statt Tabelle)
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
+
+<div class="todo">
 TODO:
 - kurz zeigen, dass die Vorgehensweise immer angewendet werden kann, wenn es um Begriffsbestimmung im weitesten Sinn geht
 - auf Annotationslehrpfad verweisen
 - evtl. Bakers Fuchsjagd kurz als Beispiel dafür zeigen, dass auch hier Ko-Text-Analysen (gepaart mit Metadaten) die Grundlage der Vorgehensweise bilden 
+</div>
