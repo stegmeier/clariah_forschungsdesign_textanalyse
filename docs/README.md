@@ -1,4 +1,4 @@
-# 1. Forschungsdesign korpusbasierte "Textanalyse": Ein Figurenverzeichnis anhand automatischer Personenenerkennung erstellen <!-- omit in toc -->
+# Forschungsdesign "korpusbasierte Textanalyse": Ein Figurenverzeichnis anhand automatischer Personenenerkennung erstellen <!-- omit in toc -->
 
 - [1. Abstract](#1-abstract)
 - [2. Vorüberlegungen](#2-vorüberlegungen)
