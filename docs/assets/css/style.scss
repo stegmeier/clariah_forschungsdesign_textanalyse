@@ -3,6 +3,9 @@
 
 @import "{{ site.theme }}";
 
+/* remove the repo name as some kind of weird super-title */
+h1:first-child { display: none }
+
 .character_main {
     font-weight: bold;
 }
