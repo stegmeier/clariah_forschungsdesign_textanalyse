@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1&period; Forschungsdesign korpusbasierte &quot;Textanalyse&quot;&colon; Ein Figurenverzeichnis anhand automatischer Personenenerkennung erstellen &lt;&excl;-- omit in toc --&gt;</title>
+        <style>
+/* From extension vscode.markdown-math */
+@font-face{font-family:KaTeX_AMS;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Caligraphic;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Caligraphic;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Fraktur;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Fraktur;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype");font-weight:700;font-style:italic}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype");font-weight:400;font-style:italic}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Math;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype");font-weight:700;font-style:italic}@font-face{font-family:KaTeX_Math;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype");font-weight:400;font-style:italic}@font-face{font-family:"KaTeX_SansSerif";src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-family:"KaTeX_SansSerif";src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype");font-weight:400;font-style:italic}@font-face{font-family:"KaTeX_SansSerif";src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Script;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size1;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size2;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size3;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size4;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Typewriter;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype");font-weight:400;font-style:normal}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto;border-color:currentColor}.katex *{-ms-high-contrast-adjust:none!important}.katex .katex-version:after{content:"0.13.0"}.katex .katex-mathml{position:absolute;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-weight:700;font-style:italic}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{display:inline-table;table-layout:fixed;border-collapse:collapse}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;vertical-align:bottom;position:relative}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;vertical-align:bottom;font-size:1px;width:2px;min-width:2px}.katex .vbox{display:inline-flex;flex-direction:column;align-items:baseline}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{display:inline-flex;flex-direction:row}.katex .thinbox{width:0;max-width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{display:inline-block;width:100%;border-bottom-style:solid}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{width:0;position:relative}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{display:inline-block;border:0 solid;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{display:inline-block;width:100%;border-bottom-style:solid}.katex .hdashline{display:inline-block;width:100%;border-bottom-style:dashed}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{display:block;position:absolute;width:100%;height:inherit;fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1}.katex svg path{stroke:none}.katex img{border-style:none;min-width:0;min-height:0;max-width:none;max-height:none}.katex .stretchy{width:100%;display:block;position:relative;overflow:hidden}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{width:100%;position:relative;overflow:hidden}.katex .halfarrow-left{position:absolute;left:0;width:50.2%;overflow:hidden}.katex .halfarrow-right{position:absolute;right:0;width:50.2%;overflow:hidden}.katex .brace-left{position:absolute;left:0;width:25.1%;overflow:hidden}.katex .brace-center{position:absolute;left:25%;width:50%;overflow:hidden}.katex .brace-right{position:absolute;right:0;width:25.1%;overflow:hidden}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{box-sizing:border-box;border:.04em solid}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{box-sizing:border-content;border-top:.049em solid;border-right:.049em solid;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{counter-increment:katexEqnNo;content:"(" counter(katexEqnNo) ")"}.katex .mml-eqn-num:before{counter-increment:mmlEqnNo;content:"(" counter(mmlEqnNo) ")"}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;position:absolute;left:calc(50% + .3em);text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{text-align:left;padding-left:2em}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.katex-error {
+	color: var(--vscode-editorError-foreground);
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="1-forschungsdesign-korpusbasierte-textanalyse-ein-figurenverzeichnis-anhand-automatischer-personenenerkennung-erstellen-">1. Forschungsdesign korpusbasierte &quot;Textanalyse&quot;: Ein Figurenverzeichnis anhand automatischer Personenenerkennung erstellen <!-- omit in toc --></h1>
+<ul>
+<li><a href="#1-abstract">1. Abstract</a></li>
+<li><a href="#2-vor%C3%BCberlegungen">2. Vorüberlegungen</a></li>
+<li><a href="#3-text-finden">3. Text finden</a>
+<ul>
+<li><a href="#text-vorbereiten">Text vorbereiten</a></li>
+</ul>
+</li>
+<li><a href="#4-text-analysieren">4. Text analysieren</a>
+<ul>
+<li><a href="#automatische-analyse">Automatische Analyse</a></li>
+<li><a href="#manuelle-bw-semi-automatische-analyse">Manuelle bw. semi-automatische Analyse</a>
+<ul>
+<li><a href="#figuren-identifizieren">Figuren identifizieren</a></li>
+<li><a href="#zwischenergebnis-1">Zwischenergebnis 1</a></li>
+<li><a href="#verfeinerung-des-zwischenergebnisses">Verfeinerung des Zwischenergebnisses</a></li>
+<li><a href="#zwischenergebnis-2">Zwischenergebnis 2</a></li>
+<li><a href="#verfeinerung-der-per-liste">Verfeinerung der PER-Liste</a></li>
+<li><a href="#zwischenergebnis-3">Zwischenergebnis 3</a></li>
+<li><a href="#verteilung-der-figuren-%C3%BCber-den-text">Verteilung der Figuren über den Text</a></li>
+<li><a href="#aussagen-%C3%BCber-figuren-erheben">Aussagen über Figuren erheben</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen">5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen</a>
+<ul>
+<li><a href="#erweiterungen">Erweiterungen</a>
+<ul>
+<li><a href="#xml-ressource-erstellen-statt-tabelle">XML-Ressource erstellen (statt Tabelle)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6-%C3%BCbertragbarkeit-auf-andere-forschungsinteressen">6. Übertragbarkeit auf andere Forschungsinteressen</a></li>
+</ul>
+<h1 id="1-abstract">1. Abstract</h1>
+<p>Das Forschungsdesign &quot;korpusbasierte Textanalyse&quot; zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben</p>
+<ul>
+<li>Roman in digitaler Form finden (s. <a href="#3-text-finden">Text finden</a>)</li>
+<li>Text automatisch annotieren lassen, um u. a. Personen (= Figuren) finden zu können (s. <a href="#4-text-analysieren">Text analysieren</a>)</li>
+<li>Anhand von Konkordanzen und Ko-Okkurrenzen Beschreibungen der Figuren generieren</li>
+<li>Aus den Personen und den Beschreibungen ein Verzeichnis erstellen (s. <a href="#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen">Figurenverzeichnis erstellen</a>)</li>
+</ul>
+<p>Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden. Hierauf wird im <a href="#6-%C3%BCbertragbarkeit-auf-andere-forschungsinteressen">letzen Abschnitt</a> noch einmal eingegangen.</p>
+<h1 id="2-vorüberlegungen">2. Vorüberlegungen</h1>
+<p>Das Figurenverzeichnis soll neben den Namen der Figuren auch Ausschnitte aus dem Text präsentieren, die die jeweilige Figur möglichst gut charakterisieren.</p>
+<p>TODO:</p>
+<ul>
+<li>evtl. weitere Absichten ergänzen
+<ul>
+<li>Netzwerk</li>
+<li>Metadaten aus anderen Quellen (z. B. GND) etc.)
+<ul>
+<li>GND-Abfrage basteln
+<ul>
+<li>curl <a href="https://lobid.org/gnd/search?q=Heidi">https://lobid.org/gnd/search?q=Heidi</a> -o &quot;test_heidi_gnd.txt&quot; findet zwar allerhand Zeug, darunter auch Verweise auf das Buch, mir ist aber noch nicht gelungen, die Abfrage auf die Figur &quot;Heidi&quot; zu beschränken</li>
+<li>Laut Wikipedia kann der Entitätentyp &quot;Person&quot; (Kürzel: &quot;p&quot;) weiter unterteilt werden, wobei literarische Figuren als &quot;pxl&quot; codiert werden (s. <a href="https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entit%C3%A4tencodierung">https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entitätencodierung</a>&quot;)</li>
+<li>wie dies als Filter eingesetzt wird, habe ich aber noch nicht verstanden</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-text-finden">3. Text finden</h1>
+<p>TODO:</p>
+<ul>
+<li>beschreiben, welche Art Date</li>
+<li>die großen Möglichkeiten nennen und eine daraus auswählen
+<ul>
+<li>TextGrid</li>
+<li>DTA</li>
+</ul>
+</li>
+</ul>
+<h2 id="text-vorbereiten">Text vorbereiten</h2>
+<p>Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. erlaubt, das Auftreten und die Charakterisierung von Figuren im Verlauf der Handlung zu beschreiben. Die Zerlegung in Kapitel folgt dabei der Überlegung, dass die Einteilung in Kapitel in konventionellen Romanen in einer Beziehung zum Handlungsfortschritt steht. Dies kann beim ausgewählten Text unterstellt werden, da er eine fortschreitende Handlung erzählt, also z. B. keines der Kapitel einen Rückblick auf vorangegangene Ereignisse bietet.</p>
+<p>Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor">In Frage kommen z. B.</a> <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="http://notepad-plus-plus.org/">Notepad++</a> oder <a href="https://code.visualstudio.com/">VS Code</a>. Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. <a href="https://www.projekt-gutenberg.org/spyri/heidi1/index.html">Projekt Gutenberg</a> (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:</p>
+<p>{% include image.html url=&quot;images/heidi_kapitel_projekt_gutenberg.png&quot; description=&quot;Inhaltsverzeichnis von <em>Heidi</em> auf der Webseite von <em>Projekt Gutenberg</em>&quot; %}</p>
+<p>TODO: regex (.+\n)+ erläutern. Auf Tutorials zu Regex verweisen (auch auf Testumgebungen wie <a href="https://regexr.com/">https://regexr.com/</a>, <a href="https://regex101.com/">https://regex101.com/</a>)
+Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:</p>
+<p><code>[Titel des zu findenden Kapitels][Zeilenumbruch][beliebiger Text][Titel des folgenden Kapitels][Zeilenumbruch]</code></p>
+<p>Suche nach dem Kapitel &quot;Fräulein Rottenmeier hat einen unruhigen Tag&quot;:</p>
+<p><code>Fräulein Rottenmeier hat einen unruhigen Tag\n(.+\n)+Im Hause Sesemann geht's unruhig zu\n</code></p>
+<p>Der Text-Editor findet nun sowohl die beiden Kapitel-Titel als auch allen Text dazwischen. Das Suchergebnis kann bequem kopiert und in eine neue Datei eingefügt werden. Um die Reihenfolge der Kapitel auch bei der späteren Analyse verwenden zu können, sollten die Dateinamen eine fortlaufende Kapitelzählung enthalten, also z. B. <code>heidi_kap_1_zum-alm-oehi-hinauf.txt</code></p>
+<h1 id="4-text-analysieren">4. Text analysieren</h1>
+<p>Die Analyse des Textes wird in zwei großen Schritten durchgeführt, die jeweils eine Anzahl von Teilschritten enthalten. Der erste große Schritt ist die <a href="#automatische-analyse">automatische Analyse</a>, an dessem Ende der Text in annotierter, also mit Zusatzinformation versehener, Form vorliegt. Um Personenbezeichnungen automatisch erkennen zu können, muss der Text in einzelne Wortformen (= Tokens) zerlegt werden. Es bietet sich an, auch eine Lemmatisierung durchzuführen, also jede Wortform mit der Zusatzinformation zu versehen, von welcher Grundform sie abgeleitet wurde: Das Lemma der Worform <em>ging</em> ist in diesem Sinne <em>gehen</em>. Im Anschluss folgt die <em>named entity regocnition</em> (NER), die neben Institutionen auch Personenennamen erkennt und markiert. Im <a href="#manuelle-bw-semi-automatische-analyse">zweiten Schritt</a> werden die Zusatzinformationen dazu genutzt, die im Roman vorkommenden Figuren zu identifizieren. Für die</p>
+<h2 id="automatische-analyse">Automatische Analyse</h2>
+<p>TODO:</p>
+<ul>
+<li>Tokenisierung, Lemmatisierung, NER beschreiben (evtl. einfach mit Screenshots)</li>
+<li>mehr als nur Weblicht für Annotation zeigen? (Hinweis reicht vielleicht, mit Screenshot der Diensteliste)</li>
+<li>Weblicht-Abfragen</li>
+</ul>
+<p>Für die automatische Annotation von Text steht eine <a href="https://www.clariah.de/ueber-uns/diensteliste">Vielzahl von Werkzeugen</a> zur Verfügung. Unsere Forschungsfrage erfordert es, den annotierten Text durchsuchen zu können. Zusätzlich zu den Annotationswerkzeugen benötigen wir also auch eine zusätzliche Software, die dies leistet. Da es fas so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der Service <a href="https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page">WebLicht</a>, der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über <a href="https://weblicht.sfs.uni-tuebingen.de/WaaS/">WebLicht as a service</a> realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. <a href="https://cwb.sourceforge.io/cqpweb.php">CQPweb</a>).</p>
+<h2 id="manuelle-bw-semi-automatische-analyse">Manuelle bw. semi-automatische Analyse</h2>
+<p>TODO:</p>
+<ul>
+<li>Strategie für Weiterverarbeitung beschreiben
+<ul>
+<li>irgendwas mit häufigste Figuren werden weiterbehandelt oder so
+<ul>
+<li>Korrekturmöglichkeiten der Liste prüfen (manuelle Annotation als Tabelle oder so? In die dann auch Textkenntnis einfließen kann oder nicht. Textkenntnis evtl. über Metadatenabfrage von Bibliotheken oder Inhaltsangaben oder so)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="figuren-identifizieren">Figuren identifizieren</h3>
+<p>Das annotierte Korpus kann direkt in WebLicht oder in <a href="https://weblicht.sfs.uni-tuebingen.de/Tundra/">TüNDRA</a>, der <em>Tübingen aNnotated Data Retrieval Application</em> genutzt werden.</p>
+<p>{% include image.html url=&quot;images/tundra_upload_tcf_annotated_corpus.png&quot; description=&quot;Upload eines eigenen Korpus im TCF-Format in TÜNDRA&quot; %}</p>
+<p>Nach dem Upload können über die Suchanfrage <code>[_ne=&quot;PER&quot;]</code> alle Wörter angezeigt werden, die als <em>Person</em> (Tag: <em>PER</em>) erkannt wurden. Zur verwendeten Anfragesprache gibt es ein <a href="https://weblicht.sfs.uni-tuebingen.de/Tundra/help">kleines Handbuch</a> und ein <a href="https://weblicht.sfs.uni-tuebingen.de/Tundra/tutorial">Tutorial</a>.</p>
+<p>{% include image.html url=&quot;images/tundra_query_per.png&quot; description=&quot;Suchanfrage, um alle mit <em>PER</em> annotierten Wörter zu finden&quot; %}</p>
+<p>Das Ergebnis der Suchanfrage wird u. a. als Konkordanz dargestellt, also als eine Liste der gefundenen Wörter und ihren Fundstellen.</p>
+<p>{% include image.html url=&quot;images/tundra_result_conc_query_per.png&quot; description=&quot;Konkordanz aller als <em>PER</em> getaggten Wörter. Als Umgebung des Suchausdrucks wird der Satz angezeigt, in der er gefunden wurde.&quot; %}</p>
+<p>Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardeinstellung gibt WebLicht hier lediglich die Gesamtanzahl der Fundstellen an. Über die Option <em>Add/Remove Columns</em> kann die Darstellung verfeinert werden:</p>
+<p>{% include image.html url=&quot;images/tundra_refine_stats_query_per.png&quot; description=&quot;Spalte <em>_ne</em> und <em>token</em> in der Statistik-Tabelle hinzufügen.&quot; %}</p>
+<p>Werden weitere Spalten hinzugefügt, werden die ausgewählten Kategorien in der Zählung berücksichtigt.</p>
+<p>{% include image.html url=&quot;images/tundra_result_refinded_stats_query_per.png&quot; description=&quot;Anzeige welche Wörter als <em>PER</em> getaggt wurden und wie häufig sie im Korpus auftreten.&quot; %}</p>
+<h3 id="zwischenergebnis-1">Zwischenergebnis 1</h3>
+<p>Die Liste aller als <em>PER</em> getaggten Wörter ist die Grundlage für das Figurenverzeichnis. Da sie auf Token, also Wortformen beruht, werden manche Namen in flektierter Form extra aufgelistet (z. B. &quot;Heidi&quot; und &quot;Heidis&quot;). Ein bereinigtes Figurenverzeichnis könnte also so aussehen:</p>
+<ul>
+<li>Heidi</li>
+<li>Rottenmeier</li>
+<li>Sesemann
+...</li>
+</ul>
+<h3 id="verfeinerung-des-zwischenergebnisses">Verfeinerung des Zwischenergebnisses</h3>
+<p>Da es sich bei &quot;Rottenmeier&quot; und &quot;Sesemann&quot; um Nachnamen handelt, wäre es von Vorteil, hier noch einen Vornamen oder zumindest eine Anredeform hinzuzufügen. Ein Blick in die Konkordanzen von <code>[token=&quot;Rottenmeier&quot;]</code> zeigt, dass &quot;Rottenmeier&quot; praktisch immer ein &quot;Fräulein&quot; vorausgeht. Diese These kann überprüft werden, indem die Suchabfrage um ein vorangestelltes &quot;Fräulein&quot; erweitert wird. In der hier verwendeten Anfragesprache wird dies realisiert, indem die Anfragen nach &quot;Fräulein&quot; und &quot;Rotttenmeier&quot; in der richtigen Reihenfolge durch einen Punkt verknüpft werden: <code>[token=&quot;Fräulein&quot;] . [token=&quot;Rottenmeier&quot;]</code></p>
+<p>{% include image.html url=&quot;images/tundra_fraeulein_rottenmeier_query_and_result.png&quot; description=&quot;Suchergebnisse für <em>Fräulein Rottenmeier</em>.&quot; %}</p>
+<p>Allerdings stimmt die Anzahl der Fundstellen nicht überein: &quot;Rottenmeier&quot; kommt 135 mal im Korpus vor, &quot;Fräulein Rottenmeier&quot; jedoch nur 127 mal. Es muss also acht Okkurrenzen von &quot;Rottenmeier&quot; geben, denen ein anderes Wort als &quot;Fräulein&quot; vorangeht. Um diese zu finden, muss also die Suchanfrage <code>[token=&quot;Fräulein&quot;] . [token=&quot;Rottenmeier&quot;]</code> so manipuliert werden, dass alle Okkurrenzen von <em>Nicht &quot;Fräulein&quot; gefolgt von &quot;Rottenmeier&quot;</em> gefunden werden. Als Suchanfrage formuliert sieht das so aus: <code>[token!=&quot;Fräulein&quot;] . [token=&quot;Rottenmeier&quot;]</code>. Die Kombination aus Ausrufezeichen und Gleichheitszeichen wird als &quot;nicht gleich&quot; interpretiert. Das Ergebnis der Anfrage ist:</p>
+<p>{% include image.html url=&quot;images/tundra_not_fraeulein_rottenmeier_query_and_result.png&quot; description=&quot;Suchergebnisse für <em>Nicht 'Fräulein' gefolgt von 'Rottenmeier'</em>.&quot; %}</p>
+<p>Da nun alle 135 Vorkommen von &quot;Rottenmeier&quot; geprüft sind, kann der Eintrag im Figurenverzeichnis nun in &quot;Fräulein Rottenmeier&quot; geändert werden.</p>
+<p>Dieselben Schritte gilt es nun für &quot;Sesemann&quot; und alle anderen potenziellen Einträge vorzunehmen. Da die These &quot;Rottenmeier&quot; bezieht sich immer auf &quot;Fräulein Rottenmeier&quot; nur aufgrund von Vorwissen über den Text aufgestellt werden kann, bietet es sich, eine allgemeinere Anfrage zu formulieren, die einfach alle Wörter anzeigt, die direkt vor &quot;Sesemann&quot; auftreten und auch die Flektionsform &quot;Sesemanns&quot; berücksichtigen, die ja laut PER-Liste zweimal im Text auftritt. Da TüNDRA (bzw. auch der in WebLicht eingebaute Viewer) reguläre Ausdrücke unterstützt, ist es relativ einfach, eine Suchanfrage zu formulieren, die sowohl &quot;Sesemann&quot; als auch &quot;Sesemanns&quot; findet und statt &quot;Fräulein&quot; jedes beliebige Token davor als Ergebnis zurückliefert: <code>[token=/.+/] . [token=/Sesemann(s)?/]</code>. Die runden Klammern im Suchausdruck nach &quot;Sesemann&quot; erzeugen eine Gruppe (hier bestehend aus dem Buchstaben <em>s</em>) und das Fragezeichen legt fest, dass diese Gruppe &quot;0 oder einmal&quot; auftreten darf.</p>
+<p>{% include image.html url=&quot;images/tundra_any_token_sesemann_query_and_result.png&quot; description=&quot;Suchergebnisse für <em>beliebige Buchstabenkette gefolgt von 'Sesemann'</em>&quot; %}</p>
+<p>Die Tabelle unter &quot;Statistics&quot; zeigt, welche Wörter wie oft vor &quot;Sesemann&quot; auftreten. Wir wissen nun also, dass die Einträge im Figurenverzeichnis um &quot;Frau Sesemann&quot;, &quot;Herr Sesemann&quot; und &quot;Klara Sesemann&quot; erweitert werden können. Der folgende Ausschnitt aus den Konkordanzen zeigt eine Form im Genitiv und eine Verwendung einer Phrase die &quot;Hause Sesemann&quot; enthält. &quot;Hause&quot; und &quot;Hauses&quot; gehen &quot;Sesemann&quot; insgesamt elf Mal voraus. Es gibt also mindestens elf Fundstellen für &quot;Sesemann(s)&quot;, die nicht direkt einer der Figuren zugeordnet werden können. Für das folgende Zwischenergebnis spielt dies erst einmal keine Rolle.</p>
+<h3 id="zwischenergebnis-2">Zwischenergebnis 2</h3>
+<ol>
+<li>Heidi</li>
+<li>Fräulein Rottenmeier</li>
+<li>Herr Sesemann</li>
+<li>Frau Sesemann</li>
+<li>Klara Sesemann</li>
+</ol>
+<p>Diese Liste zeigt nicht nur, dass die Vorgehensweise erfolgreich ist, sie zeigt bei näherer Betrachtung auch, dass Textkenntnis für bestimmte textanalytische Aufgaben unerlässlich ist. Denn wir wissen zwar, dass der Großvater eine wichtige Figur im Buch ist, er kommt in unserer Liste aber bisher nicht vor. Dies liegt vermutlich daran, dass der Named Entity Recognizer das Wort &quot;Großvater&quot; nicht als Person erkannt hat, weshalb es in unserer ursprünglichen Liste fehlt. Da &quot;Großvater&quot; auch flektiert als &quot;Großvaters&quot; auftreten kann, müssen wie also eine Suchanfrage formulieren, die beide Wortformen abdeckt. Hierfür eignet sich z. B. <code>[token=/Großvater(s)?/]</code>. Die Anfrage liefert 198 Treffer zurück:</p>
+<p>{% include image.html url=&quot;images/tundra_großvater_query_and_result.png&quot; description=&quot;Suchergebnisse für <em>Großvater</em> und <em>Großvaters</em>.&quot; %}</p>
+<p>Die Häufigkeit, mit der bestimmte Ausdrücke in einem Text verwendet werden, lässt erste Rückschlüsse darauf zu, worum es in diesem Text geht. Die Abfrage der Häufigkeiten aller als &quot;PER&quot; getaggter Wörter zeigt, dass Heidi 701 mal direkt genannt wird (647 als &quot;Heidi&quot;, 54 als &quot;Heidis&quot;) und damit die am häufigsten genannte Figur im Text ist. Nach dieser Liste ist Fräulein Rottenmeier die am zweithäufigsten genannte Figur (135 Nennungen); da der Großvater jedoch 198 mal genannt wird, verdrängt er sie von diesem Platz.</p>
+<h3 id="verfeinerung-der-per-liste">Verfeinerung der PER-Liste</h3>
+<p>Da die Häufigkeit, mit der Figurenbezeichnungen im Text genannt werden, eine Rolle für die Analyse spielt, ist es sinnvoll, die PER-Liste zu bereinigen, so dass</p>
+<ul>
+<li>die unflektierten und flektierten Formen unter einem Eintrag zusammengefasst werden</li>
+<li>zwischen &quot;Herr Sesemann&quot;, &quot;Frau Sesemann&quot;, &quot;Klara Sesemann&quot;, &quot;Hause Sesemann&quot; unterschieden werden kann</li>
+</ul>
+<p>Für dieses Tutorial führen wir die Bereinigung nur beispielhaft durch. Für ein echtes Forschungsprojekt muss je nach Figurenanzahl eine sinnvolle Strategie entwickelt werden, welche Figurennennungen auf diese Weise bearbeitet werden. Auch hier ist die Häufigkeit eine durchaus sinnvolle Kategorie. Als Grundlage nehmen wir die als CSV- oder Textdatei heruntergeladene Statisticstabelle für die Abfrage [_ne=&quot;PER&quot;]. Sollte diese nicht vollständig sein (was beim Download manchmal passiert), kann die gesamte Tabelle auch einfach direkt von der Webseite kopiert und in eine Textdatei eingefügt werden. In diesem Fall wird jedes Feld auf eine eigene Zeile gesetzt und kann durch Suchen &amp; Ersetzen wieder in eine Komma- oder TAB-separierten Datei verwandelt werden, die in Excel oder LibreOffice Calc oder einem ähnlichen Programm bearbeitet werden kann. Die Suchen müssen in einem Text-Editor durchgeführt werden, der reguläre Ausdrücke versteht (<a href="#texteditor" title="z. B. Sublime, VS Code, Notepad++">s. o.</a> ).</p>
+<p>Hinweis zum Suchen und Ersetzen:</p>
+<ol>
+<li>Zeilenumbruch nach Dezimalzahl durch Platzhalter <em>UMBRUCH</em> ersetzen
+<ol>
+<li>Suchen-Feld: <code>(\d+\.\d+)\n</code> (der Ausdruck in runden Klammern wird als Gruppe gefunden und gespeichert, <em>\n</em> steht für &quot;newline&quot;. Sollten Sie Windows verwenden müssen Sie evtl. stattdessen <em>\r\n</em> für &quot;carriage return&quot; gefolgt von &quot;newline&quot; suchen.)</li>
+<li>Ersetzen-Feld: <code>$1 UMBRUCH</code> (<em>$1</em> ruft den gespeicherten Ausdruck ab)</li>
+</ol>
+</li>
+<li>Alle (verbleibenden) Zeilenumbrüche durch TAB ersetzen
+<ol>
+<li>Suchen-Feld: <code>\n</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="zwischenergebnis-3">Zwischenergebnis 3</h3>
+<p>Die bisherigen Anfragen liefern nicht nur Erkenntnisse über die Häufigkeit, mit der Figurenbezeichnungen verwendet werden. Da das Figurenverzeichnis nicht nur die Namen der Figuren, sondern auch Zusatzinformationen aus dem Text enthalten soll, ist es sinnvoll z. B. anhand der Konkordanzen können auch erste Thesen über den Charakter einer Figur zu bilden. Da nun mehr Informationen darzustellen sind, bietet sich die Tabellenform an.</p>
+<p>{% include table_pers_1.html %}</p>
+<p>Die Konkordanz, die zur Charakterisierung des Großvaters dient, gibt noch einen weiteren Hinweis. Der Kapitel-Titel &quot;Beim Großvater&quot; lässt vermuten, dass &quot;Öhi&quot; eine alternative Bezeichnung für die Figur &quot;Großvater&quot; ist. Eine kurze Recherche in den Konkordanzen bestätigt dies, weshalb die Häufigkeitsangabe in der Tabelle oben korrigiert werden muss. Da wir bereits wissen, dass statt &quot;Öhi&quot; auch &quot;Alm-Öhi&quot; verwendet werden kann, müssen wir eine Suchanfrage formulieren, die die Ausdrücke &quot;Alm-Öhi&quot;, &quot;Öhi&quot;, &quot;Großvater&quot; und &quot;Großvaters&quot; findet: <code>[token=(/(Alm-)*Öhi(s)?/ | /Großvater(s)?/)]</code>. Diese Suchanfrage findet insgesamt 291 Fundstellen, also fast 100 mehr als die Anfrage für &quot;Großvater(s)?&quot;</p>
+<p>{% include image.html url=&quot;images/tundra_alm_oehi_großvater_query_and_result.png&quot; description=&quot;Suchergebnisse für <em>Alm-Öhi</em>, <em>Öhi</em>, <em>Alm-Öhis</em>, <em>Öhis</em>, <em>Großvater</em> und <em>Großvaters</em>.&quot; %}</p>
+<p>Absolute Häufigkeiten sind in korpusbasierten Textanalysen nur dann sinnvoll, wenn das gesamte Korpus aus genau einem Text besteht, wie es hier der Fall ist. Um aber z. B. Aussagen darüber zu treffen, ob der Name einer Hauptfigur eines Romans in Text A häufiger genannt wird als in Text B, müssen relative Häufigkeiten verwendet werden, da sonst z. B. unterschiedliche Textlängen nicht in den Vergleich einfließen. Textlängen werden üblicherweise durch die Gesamtanzahl der Tokens ausgedrückt. Um herauszufinden, aus wie vielen Tokens der vorliegende Text besteht, können wir nach allen Buchstabenketten auf der Token-Ebene suchen: `[token=/.+/]</p>
+<p>{% include image.html url=&quot;images/tundra_tokens_query_and_result.png&quot; description=&quot;Suchergebnisse für die Suche nach allen Wortformen.&quot; %}</p>
+<p>Der Text besteht aus insgesamt 60424 Tokens in 2285 Sätzen. Die häufigsten Tokens dienen der Punktuation oder gehören der Klasse der sogenannten Synsemantika (Funktionswörter) an. Erst auf Rang 8 erscheint das erste Autosemantikum (Inhaltswort): &quot;Heidi&quot;. Die darauf folgenden Wortformen sind wiederum Funktionswörter. Diese Rangfolge entspricht den Erwartungen an natürliche Sprache, wie z. B. ein Vergleich mit einer Statistik des <a href="https://cls.corpora.uni-leipzig.de/de/deu_easynews_2014/3.2.1_The%20Most%20Frequent%2050%20Words.html">Wortschatzes Leipzig</a> zeigt:</p>
+<p>{% include image.html url=&quot;images/wortschatz_leipzig_worthaeufigkeiten_vollstaendig.png&quot; description=&quot;Auszug aus der Liste der 50 häufigsten Wörter in deutschen Nachrichtentexten&quot; %}</p>
+<p>Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausnahmslos in jedem Text vertreten, der den natürlichsprachlichen Konventionen folgt. Als durchaus auffällig kann angesehen werden, dass im vorliegenden Roman die Wortform &quot;es&quot; bereits auf dem fünften Platz auftaucht. Da zwei Ränge davon von Punktuationszeichen besetzt sind, diese in der angeführten Statistik jedoch nicht aufgeführt werden, ist im Vergleich &quot;es&quot; im Roman auf Platz 3, in der Auswertung der Nachrichtentexte jedoch erst auf Platz 16. Aufgrund unserer Textkenntnis wissen wir, dass &quot;Heidi&quot; durch &quot;es&quot; pronominalisiert wird, was also zum konventionellen Gebrauch von &quot;es&quot; hinzukommt und so (vermutlich) die Rangfolge stark beeinflusst. Eine genauere Untersuchung sprengt den Rahmen dieses Tutorials. Eine mögliche Vorgehensweise wäre, den gesamten Text daraufhin auszuwerten, wie häufig &quot;es&quot; als Pronominalisierung von &quot;Heidi&quot; verwendet wird.</p>
+<p>TODO:</p>
+<ul>
+<li>Liste mit den häufigsten Substantiven (NN und NE) erstellen</li>
+<li>relative Häufigkeiten (zu allen Tokens, zu PER, zu Substantiven) von Heidi etc. berechnen</li>
+<li>prüfen, ob WebLicht da helfen kann</li>
+<li></li>
+</ul>
+<h3 id="verteilung-der-figuren-über-den-text">Verteilung der Figuren über den Text</h3>
+<p>TODO</p>
+<ul>
+<li>WebLicht prüfen (Satzzählung)</li>
+<li>Voyant</li>
+<li>Ergebnis der Verteilung ist Hinweis auf Wichtigkeit (gleichmäßig = wichtig)</li>
+</ul>
+<h3 id="aussagen-über-figuren-erheben">Aussagen über Figuren erheben</h3>
+<p>TODO:</p>
+<ul>
+<li>Strategien beschreiben / ausprobieren
+<ul>
+<li>Kollokationen / Ko-Okkurrenzen berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h1 id="5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen">5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen</h1>
+<p>TODO:</p>
+<ul>
+<li>Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)</li>
+<li>Netzwerke
+<ul>
+<li>welche Figuren treten häufig miteinander auf?</li>
+<li>welche Wörter treten häufig mit welcher Figur auf?</li>
+<li>Netz aus Figuren und häufigsten Kollokationen</li>
+</ul>
+</li>
+</ul>
+<h2 id="erweiterungen">Erweiterungen</h2>
+<h3 id="xml-ressource-erstellen-statt-tabelle">XML-Ressource erstellen (statt Tabelle)</h3>
+<h1 id="6-übertragbarkeit-auf-andere-forschungsinteressen">6. Übertragbarkeit auf andere Forschungsinteressen</h1>
+<p>TODO:</p>
+<ul>
+<li>kurz zeigen, dass die Vorgehensweise immer angewendet werden kann, wenn es um Begriffsbestimmung im weitesten Sinn geht</li>
+<li>auf Annotationslehrpfad verweisen</li>
+<li>evtl. Bakers Fuchsjagd kurz als Beispiel dafür zeigen, dass auch hier Ko-Text-Analysen (gepaart mit Metadaten) die Grundlage der Vorgehensweise bilden</li>
+</ul>
+
+    </body>
+    </html>
