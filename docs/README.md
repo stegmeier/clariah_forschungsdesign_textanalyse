@@ -134,7 +134,7 @@ Da es sich bei "Rottenmeier" und "Sesemann" um Nachnamen handelt, wäre es von V
 
 Allerdings stimmt die Anzahl der Fundstellen nicht überein: "Rottenmeier" kommt 135 mal im Korpus vor, "Fräulein Rottenmeier" jedoch nur 127 mal. Es muss also acht Okkurrenzen von "Rottenmeier" geben, denen ein anderes Wort als "Fräulein" vorangeht. Um diese zu finden, muss also die Suchanfrage `[token="Fräulein"] . [token="Rottenmeier"]` so manipuliert werden, dass alle Okkurrenzen von _Nicht "Fräulein" gefolgt von "Rottenmeier"_ gefunden werden. Als Suchanfrage formuliert sieht das so aus: `[token!="Fräulein"] . [token="Rottenmeier"]`. Die Kombination aus Ausrufezeichen und Gleichheitszeichen wird als "nicht gleich" interpretiert. Das Ergebnis der Anfrage ist:
 
-{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für <span class=\"italic\">Nicht \"Fräulein\" gefolgt von \"Rottenmeier\"</span>." %}
+{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für <span>Nicht \"Fräulein\" gefolgt von \"Rottenmeier\"</span>." %}
 
 Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im Figurenverzeichnis nun in "Fräulein Rottenmeier" geändert werden. 
 
@@ -154,7 +154,7 @@ Die Tabelle unter "Statistics" zeigt, welche Wörter wie oft vor "Sesemann" auft
 
 Diese Liste zeigt nicht nur, dass die Vorgehensweise erfolgreich ist, sie zeigt bei näherer Betrachtung auch, dass Textkenntnis für bestimmte textanalytische Aufgaben unerlässlich ist. Denn wir wissen zwar, dass der Großvater eine wichtige Figur im Buch ist, er kommt in unserer Liste aber bisher nicht vor. Dies liegt vermutlich daran, dass der Named Entity Recognizer das Wort "Großvater" nicht als Person erkannt hat, weshalb es in unserer ursprünglichen Liste fehlt. Da "Großvater" auch flektiert als "Großvaters" auftreten kann, müssen wie also eine Suchanfrage formulieren, die beide Wortformen abdeckt. Hierfür eignet sich z. B. `[token=/Großvater(s)?/]`. Die Anfrage liefert 198 Treffer zurück:
 
-{% include image.html url="images/tundra_großvater_query_and_result.png" description="Suchergebnisse für _Großvater_ und _Großvaters_." %}
+{% include image.html url="images/tundra_grossvater_query_and_result.png" description="Suchergebnisse für _Großvater_ und _Großvaters_." %}
 
 Die Häufigkeit, mit der bestimmte Ausdrücke in einem Text verwendet werden, lässt erste Rückschlüsse darauf zu, worum es in diesem Text geht. Die Abfrage der Häufigkeiten aller als "PER" getaggter Wörter zeigt, dass Heidi 701 mal direkt genannt wird (647 als "Heidi", 54 als "Heidis") und damit die am häufigsten genannte Figur im Text ist. Nach dieser Liste ist Fräulein Rottenmeier die am zweithäufigsten genannte Figur (135 Nennungen); da der Großvater jedoch 198 mal genannt wird, verdrängt er sie von diesem Platz. 
 
@@ -166,7 +166,7 @@ Die bisherigen Anfragen liefern nicht nur Erkenntnisse über die Häufigkeit, mi
 
 Die Konkordanz, die zur Charakterisierung des Großvaters dient, gibt noch einen weiteren Hinweis. Der Kapitel-Titel "Beim Großvater" lässt vermuten, dass "Öhi" eine alternative Bezeichnung für die Figur "Großvater" ist. Eine kurze Recherche in den Konkordanzen bestätigt dies, weshalb die Häufigkeitsangabe in der Tabelle oben korrigiert werden muss. Da wir bereits wissen, dass statt "Öhi" auch "Alm-Öhi" verwendet werden kann, müssen wir eine Suchanfrage formulieren, die die Ausdrücke "Alm-Öhi", "Öhi", "Großvater" und "Großvaters" findet: `[token=(/(Alm-)*Öhi(s)?/ | /Großvater(s)?/)]`. Diese Suchanfrage findet insgesamt 291 Fundstellen, also fast 100 mehr als die Anfrage für "Großvater(s)?"
 
-{% include image.html url="images/tundra_alm_oehi_großvater_query_and_result.png" description="Suchergebnisse für _Alm-Öhi_, _Öhi_, _Alm-Öhis_, _Öhis_, _Großvater_ und _Großvaters_." %}
+{% include image.html url="images/tundra_alm_oehi_grossvater_query_and_result.png" description="Suchergebnisse für _Alm-Öhi_, _Öhi_, _Alm-Öhis_, _Öhis_, _Großvater_ und _Großvaters_." %}
 
 ### Verfeinerung der PER-Liste
 
