@@ -1,1 +1,1 @@
-# clariah_forschungsdesign_textanalyse
+# Forschungsdesign "korpusbasierte Textanalyse"
