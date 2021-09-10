@@ -116,7 +116,7 @@ Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardei
 
 Werden weitere Spalten hinzugefügt, werden die ausgewählten Kategorien in der Zählung berücksichtigt.
 
-{% include image.html url="images/tundra_result_refinded_stats_query_per.png" description="Anzeige welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
+{% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
 
 ### Zwischenergebnis 1
 
@@ -136,7 +136,7 @@ Allerdings stimmt die Anzahl der Fundstellen nicht überein: "Rottenmeier" kommt
 
 {% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für Nicht \"Fräulein\" gefolgt von \"Rottenmeier\"." %}
 
-Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im Figurenverzeichnis nun in "Fräulein Rottenmeier" geändert werden. 
+Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im Figurenverzeichnis in "Fräulein Rottenmeier" geändert werden. 
 
 Dieselben Schritte gilt es nun für "Sesemann" und alle anderen potenziellen Einträge vorzunehmen. Da die These "Rottenmeier" bezieht sich immer auf "Fräulein Rottenmeier" nur aufgrund von Vorwissen über den Text aufgestellt werden kann, bietet es sich, eine allgemeinere Anfrage zu formulieren, die einfach alle Wörter anzeigt, die direkt vor "Sesemann" auftreten und auch die Flektionsform "Sesemanns" berücksichtigen, die ja laut PER-Liste zweimal im Text auftritt. Da TüNDRA (bzw. auch der in WebLicht eingebaute Viewer) reguläre Ausdrücke unterstützt, ist es relativ einfach, eine Suchanfrage zu formulieren, die sowohl "Sesemann" als auch "Sesemanns" findet und statt "Fräulein" jedes beliebige Token davor als Ergebnis zurückliefert: `[token=/.+/] . [token=/Sesemann(s)?/]`. Die runden Klammern im Suchausdruck nach "Sesemann" erzeugen eine Gruppe (hier bestehend aus dem Buchstaben _s_) und das Fragezeichen legt fest, dass diese Gruppe "0 oder einmal" auftreten darf. 
 
