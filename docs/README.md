@@ -116,7 +116,7 @@ Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardei
 
 Werden weitere Spalten hinzugefügt, werden die ausgewählten Kategorien in der Zählung berücksichtigt.
 
-{% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
+{% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige, welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
 
 ### Zwischenergebnis 1
 
