@@ -21,9 +21,13 @@ h1:first-child { display: none }
 }
 
 .todo {
+    display: none;
+}
+
+todo_must {
     font-family: 'Courier New', Courier, monospace;
     font-size: small;
-    color: gray;
+    color: green;
 }
 
 figcaption {

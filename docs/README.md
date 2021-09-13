@@ -5,16 +5,16 @@
 - [3. Text finden](#3-text-finden)
   - [Text vorbereiten](#text-vorbereiten)
 - [4. Text analysieren](#4-text-analysieren)
-  - [Automatische Analyse](#automatische-analyse)
-  - [Manuelle bw. semi-automatische Analyse](#manuelle-bw-semi-automatische-analyse)
+  - [Automatische Analyse und Annotation](#automatische-analyse-und-annotation)
+  - [Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen](#manuelle-bw-semi-automatische-analyse-das-annotierte-korpus-nutzen)
     - [Figuren identifizieren](#figuren-identifizieren)
     - [Zwischenergebnis 1](#zwischenergebnis-1)
-    - [Verfeinerung des Zwischenergebnisses](#verfeinerung-des-zwischenergebnisses)
+    - [Zwischenergebnis verfeinern](#zwischenergebnis-verfeinern)
     - [Zwischenergebnis 2](#zwischenergebnis-2)
     - [Zwischenergebnis 3](#zwischenergebnis-3)
     - [Verfeinerung der PER-Liste](#verfeinerung-der-per-liste)
     - [Kurzer Exkurs zu Worthäufigkeiten](#kurzer-exkurs-zu-worthäufigkeiten)
-    - [Verteilung der Figuren über den Text](#verteilung-der-figuren-über-den-text)
+    - [Häufigkeitsverteilung der Figuren über den Text](#häufigkeitsverteilung-der-figuren-über-den-text)
     - [Aussagen über Figuren erheben](#aussagen-über-figuren-erheben)
 - [5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
   - [Erweiterungen](#erweiterungen)
@@ -48,9 +48,8 @@ TODO:
 </div>
 
 # 3. Text finden
-<div class="todo">
+<div class="todo_must">
 TODO:
-- beschreiben, welche Art Date
 - die großen Möglichkeiten nennen und eine daraus auswählen
   - TextGrid
   - DTA
@@ -64,7 +63,7 @@ Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell mac
 
 {% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von _Heidi_ auf der Webseite von _Projekt Gutenberg_" %}
 
-<div class="todo">
+<div class="todo_must">
 TODO: regex (.+\n)+ erläutern. Auf Tutorials zu Regex verweisen (auch auf Testumgebungen wie https://regexr.com/, https://regex101.com/)
 </div>
 
@@ -82,29 +81,24 @@ Der Text-Editor findet nun sowohl die beiden Kapitel-Titel als auch allen Text d
 
 Die Analyse des Textes wird in zwei großen Schritten durchgeführt, die jeweils eine Anzahl von Teilschritten enthalten. Der erste große Schritt ist die [automatische Analyse](#automatische-analyse), an dessem Ende der Text in annotierter, also mit Zusatzinformation versehener, Form vorliegt. Um Personenbezeichnungen automatisch erkennen zu können, muss der Text in einzelne Wortformen (= Tokens) zerlegt werden. Es bietet sich an, auch eine Lemmatisierung durchzuführen, also jede Wortform mit der Zusatzinformation zu versehen, von welcher Grundform sie abgeleitet wurde: Das Lemma der Worform _ging_ ist in diesem Sinne _gehen_. Im Anschluss folgt die _named entity regocnition_ (NER), die neben Institutionen auch Personenennamen erkennt und markiert. Im [zweiten Schritt](#manuelle-bw-semi-automatische-analyse) werden die Zusatzinformationen dazu genutzt, die im Roman vorkommenden Figuren zu identifizieren. Für die 
 
-## Automatische Analyse
+## Automatische Analyse und Annotation
 
-<div class="todo">
+Für die automatische Annotation von Text steht eine [Vielzahl von Werkzeugen](https://www.clariah.de/ueber-uns/diensteliste) zur Verfügung. Unsere Forschungsfrage erfordert es, den annotierten Text durchsuchen zu können. Zusätzlich zu den Annotationswerkzeugen benötigen wir also auch eine zusätzliche Software, die dies leistet. 
+
+<div class="todo_must">
 TODO: 
-- Tokenisierung, Lemmatisierung, NER beschreiben (evtl. einfach mit Screenshots)
-- mehr als nur Weblicht für Annotation zeigen? (Hinweis reicht vielleicht, mit Screenshot der Diensteliste)
-- Weblicht-Abfragen
+- Screenshot von Weblicht-Chain einfügen und kurz erläutern
   </div>
 
-Für die automatische Annotation von Text steht eine [Vielzahl von Werkzeugen](https://www.clariah.de/ueber-uns/diensteliste) zur Verfügung. Unsere Forschungsfrage erfordert es, den annotierten Text durchsuchen zu können. Zusätzlich zu den Annotationswerkzeugen benötigen wir also auch eine zusätzliche Software, die dies leistet. Da es fas so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der Service [WebLicht](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page), der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über [WebLicht as a service](https://weblicht.sfs.uni-tuebingen.de/WaaS/) realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. [CQPweb](https://cwb.sourceforge.io/cqpweb.php)).
+Da es fast so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der Service [WebLicht](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page), der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über [WebLicht as a service](https://weblicht.sfs.uni-tuebingen.de/WaaS/) realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. [CQPweb](https://cwb.sourceforge.io/cqpweb.php)).
 
 
-## Manuelle bw. semi-automatische Analyse
+## Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen
 
-<div class="todo">
-TODO:
-- Strategie für Weiterverarbeitung beschreiben
-  - irgendwas mit häufigste Figuren werden weiterbehandelt oder so
-    - Korrekturmöglichkeiten der Liste prüfen (manuelle Annotation als Tabelle oder so? In die dann auch Textkenntnis einfließen kann oder nicht. Textkenntnis evtl. über Metadatenabfrage von Bibliotheken oder Inhaltsangaben oder so)
-</div>
+Das annotierte Korpus ist die Grundlage für die Bearbeitung der Forschungsfrage. Durch die Zusatzinformationen können wir nun z. B. direkt eine Liste aller Wörter ausgeben lassen, die von der _Named Entity Recognition_ als Person erkannt wurden (s. [Figuren identifizieren](#figuren-identifizieren)). Darüber hinaus können wir die Textumgebung der Wörter, die als Person erkannt werden, in die Analyse mit einbeziehen. Auf diese Weise können wir z. B. prüfen, ob vielleicht unterschiedliche Personen mit demselben Nachnamen existieren (s. [Zwischenergebnis verfeinern](#zwischenergenis-verfeinern)) und wie die Figuren durch den Ko-Text charakterisiert werden (s. [Aussagen über Figuren erheben](#aussagen-über-figuren-erheben)). Wir beschränken uns dabei auf die häufigsten Figuren.
 
 ### Figuren identifizieren
-Das annotierte Korpus kann direkt in WebLicht oder in [TüNDRA](https://weblicht.sfs.uni-tuebingen.de/Tundra/), der _Tübingen aNnotated Data Retrieval Application_ genutzt werden. 
+Das annotierte Korpus kann direkt nach der automatischen Annotation in WebLicht genutzt oder in [TüNDRA](https://weblicht.sfs.uni-tuebingen.de/Tundra/), der _Tübingen aNnotated Data Retrieval Application_ geladen und dort durchsucht werden. 
 
 {% include image.html url="images/tundra_upload_tcf_annotated_corpus.png" description="Upload eines eigenen Korpus im TCF-Format in TÜNDRA" %}
 
@@ -116,7 +110,7 @@ Das Ergebnis der Suchanfrage wird u. a. als Konkordanz dargestellt, also als ein
 
 {% include image.html url="images/tundra_result_conc_query_per.png" description="Konkordanz aller als _PER_ getaggten Wörter. Als Umgebung des Suchausdrucks wird der Satz angezeigt, in der er gefunden wurde." %}
 
-Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardeinstellung gibt WebLicht hier lediglich die Gesamtanzahl der Fundstellen an. Über die Option _Add/Remove Columns_ kann die Darstellung verfeinert werden:
+Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardeinstellung gibt WebLicht hier lediglich die Gesamtanzahl der Fundstellen an. Über die Option _Add/Remove Columns_ kann die Darstellung verfeinert werden (*_ne* wählt die Ebene der _Named Entity Recognition_ aus; _token_ wählt die Ebene der Wortformen aus):
 
 {% include image.html url="images/tundra_refine_stats_query_per.png" description="Spalte *_ne* und _token_ in der Statistik-Tabelle hinzufügen." %}
 
@@ -132,7 +126,7 @@ Die Liste aller als _PER_ getaggten Wörter ist die Grundlage für das Figurenve
 * Sesemann
 ...
 
-### Verfeinerung des Zwischenergebnisses
+### Zwischenergebnis verfeinern
 
 Da es sich bei "Rottenmeier" und "Sesemann" um Nachnamen handelt, wäre es von Vorteil, hier noch einen Vornamen oder zumindest eine Anredeform hinzuzufügen. Ein Blick in die Konkordanzen von `[token="Rottenmeier"]` zeigt, dass "Rottenmeier" praktisch immer ein "Fräulein" vorausgeht. Diese These kann überprüft werden, indem die Suchabfrage um ein vorangestelltes "Fräulein" erweitert wird. In der hier verwendeten Anfragesprache wird dies realisiert, indem die Anfragen nach "Fräulein" und "Rotttenmeier" in der richtigen Reihenfolge durch einen Punkt verknüpft werden: `[token="Fräulein"] . [token="Rottenmeier"]`
 
@@ -215,48 +209,73 @@ Der Text besteht aus insgesamt 60424 Tokens in 2285 Sätzen. Die häufigsten Tok
 
 Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausnahmslos in jedem Text vertreten, der den natürlichsprachlichen Konventionen folgt. Als durchaus auffällig kann angesehen werden, dass im vorliegenden Roman die Wortform "es" bereits auf dem fünften Platz auftaucht. Da zwei Ränge davon von Punktuationszeichen besetzt sind, diese in der angeführten Statistik jedoch nicht aufgeführt werden, ist im Vergleich "es" im Roman auf Platz 3, in der Auswertung der Nachrichtentexte jedoch erst auf Platz 16. Aufgrund unserer Textkenntnis wissen wir, dass "Heidi" durch "es" pronominalisiert wird, was also zum konventionellen Gebrauch von "es" hinzukommt und so (vermutlich) die Rangfolge stark beeinflusst. Eine genauere Untersuchung sprengt den Rahmen dieses Tutorials. Eine mögliche Vorgehensweise wäre, den gesamten Text daraufhin auszuwerten, wie häufig "es" als Pronominalisierung von "Heidi" verwendet wird.
 
-Relative Häufigkeiten werden für die Analyse eines einzelnen Textes auch dann wichtig, wenn dieser Text nicht mehr als Ganzes, sondern z. B. kapitelweise untersucht wird. Um prüfen zu können, ob eine Figur in einem Kapitel häufiger als in einem anderen genannt wird, genügt die absolute Häufigkeit nicht mehr, sondern sie muss in ein Verhältnis zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt werden. 
+### Häufigkeitsverteilung der Figuren über den Text
 
-<div class="todo">
+Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Eine Figur, die nur in bestimmten Teilen eines Buches auftritt, spielt eine andere Rolle für das gesamte Buch, als eine Figur, die in jedem oder fast jedem Kapitel auftritt. Aber auch eine Figur, die in jedem Kapitel vorkommt, kann eine untergeordnete Rolle spielen. Daher ist es auch hier sinnvoll, die Häufigkeit, mit der eine Figur (bzw. ein Wort oder ein annotierte Kategorie wie _Per_) in einem bestimmten Textabschnitt genannt wird, in die Untersuchung der Verteilung einzubeziehen. Wenn aber z. B. nur das Personal eines bestimmten Textabschnittes bestimmt werden soll, genügt es zu prüfen, ob eine Figur genannt wird oder nicht. Wenn die Ergebnisse auch Rückschlüsse darauf zulässen, wie wichtig ein Ausdruck oder eine Kategorie für die Interpretation oder das Verstehen des Textabschnittes ist, muss die Häufigkeitsverteilung bestimmt werden. In diesem Zusammenhang werden die oben angesprochenen relativen Häufigkeiten auch für die Analyse eines einzelnen Textes wichtig, da nur so herausgefunden werden kann, ob eine Figur bzw. Ausdruck in einem Kapitel häufiger als in einem anderen genannt wird. Die relative Häufigkeit wird dabei als Verhältnis des gesuchten Ausdrucks zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt verstanden.
+
+Da wir den Text schon zu Beginn in Kapitel (= Teilkorpora) zerlegt haben, können wir die Häufigkeitsverteilung auf dieser Grundlage untersuchen. WebLicht bzw. TüNDRA hierfür zu nutzen, ist ein wenig umständlich, da jeder Text einzeln als Korpus geladen und durchsucht werden muss. Wenn eine sehr große Menge an Teilkorpora vorliegt, ist es besser, ein Korpusverwaltungssystem wie CQPweb, oder einen Service wie [Voyant](https://voyant-tools.org) zu nutzen. Im Folgenden wird an zwei Kapiteln demonstriert, wie die Aufgabe mit TüNdra gelöst werden kann. Die Analyse aller Kapitel wird mit Voyant gezeigt.
+
+<div class="todo_must">
 TODO:
 - zwei Kapitel zur Demonstration relativer Häufigkeiten in WebLicht untersuchen
 - relative Häufigkeiten (zu allen Tokens) von Heidi etc. berechnen  
 </div>
 
-### Verteilung der Figuren über den Text
 
-Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten gefunden werden, um den Text zu zerlegen und so Aussagen darüber zu ermöglichen, wie häufig welche Figur wann genannt wird. Die Textanalyse-Umgebung [Voyant](https://voyant-tools.org) zerlegt ein Korpus, das aus einem einzigen Text besteht, standardmäßig in zehn Teile. Neben weiteren Werkzeugen zeigt es die Verteilung von Wörtern auf diese zehn Teile als Grafik:
+
+Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten gefunden werden, um den Text zu zerlegen und so Aussagen darüber zu ermöglichen, wie häufig welche Figur wann genannt wird. Die Textanalyse-Umgebung [Voyant](https://voyant-tools.org) zerlegt ein Korpus, das aus einem einzigen Text besteht, standardmäßig in zehn Teile. Neben weiteren Werkzeugen zeigt es die Verteilung von Wörtern auf diese zehn Teile als Grafik:
 
 {% include image.html url="images/voyant_characters_dispersion_fulltext_corpus.png" description="Verteilung der häufigsten Figuren auf den in Zehntel zerlegten Text in Voyant" %}
 
-In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Texten geladen werden. Dies erlaubt es auch, die Verteilung der Figurennennungen kapitelweise zu visualisieren. Allerdings muss hierfür die Benennung der Dokumente so angepasst werden, dass die Kapitelzählung richtig interpretiert wird. Wir dies nicht getan, erhält man beispielsweise folgendes Ergebnis:
+In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Texten geladen werden. Dies erlaubt es auch, die Verteilung der Figurennennungen kapitelweise zu visualisieren. Allerdings muss hierfür die Benennung der Dokumente so angepasst werden, dass die Kapitelzählung richtig interpretiert wird. Wird dies nicht getan, erhält man beispielsweise folgendes Ergebnis:
 
 {% include image.html url="images/voyant_chapter_corp_wrong_order.png" description="Unerwartete Kapitelreihenfolge in Voyant aufgrund nicht-numerischer Interpretation der Zahlen in den Dateinamen" %}
 
+<div class="todo_must">
+TODO
+- Voyant-Analyse ausführen und erläutern
+</div>
 
 <div class="todo">
 TODO
 - WebLicht prüfen (Satzzählung)
-- Voyant
-- Ergebnis der Verteilung ist Hinweis auf Wichtigkeit (gleichmäßig = wichtig)
 </div>
 
 
 ### Aussagen über Figuren erheben
 
-<div class="todo">
-TODO:
-- Strategien beschreiben / ausprobieren
-  - Kollokationen / Ko-Okkurrenzen berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern
-</div>
+Wie oben schon angedeutet, bieten Konkordanzen (die Textumgebung, in der Figuren genannt werden) eine gute Möglichkeit, mehr über einzelne Figuren zu erfahren. Die Möglichkeit, alle Konkordanzen ergebnisoffen zu lesen und zunächst kategorienfrei "interessante" Stellen zu markieren, ist vor allem dann sinnvoll, wenn der Gefahr entgegengewirkt werden soll, Kategorien zu verwenden, die aus irgendeinem Grund dem Text nicht angemessen sind. Ein eher formales Beispiel hierfür wäre eine Kategorisierung in "falsch" und "richtig" auf grammatischer Ebene, die die Pronominalisierung von "es" für "Heidi" als "falsch" annotieren würde. Ohne Perspektivierung, dass dies aus heutiger oder aus Sicht der Standardgrammatik falsch ist, wäre dies unangemessen. Angemessenheit der verwendeten Kategorien leitet sich ansonsten hauptsächlich aus der Fragestellung ab. Dementsprechend sind nur solche Kategorien angemessen, die es erlauben, die Fragestellung konstruktiv zu bearbeiten.
 
+Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. Hierfür können zwei Strategien grob unterschieden werden.
+1. Zählung aller Wörter, die sich direkt auf eine Figur beziehen
+   1. z. B. attributive Adjektive
+   2. Verben in Sätzen, deren Subjekt die gesuchte Figur ist
+2. Zählung aller Wörter, die in der Nähe zu einer Figurennennung auftreten, z. B.
+   1. Wörter im selben Satz wie die Figur
+   2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
+   
+Beide Strategien führen zu aussagekräftigen Ergebnissen, wobei der Vorteil der ersten darin liegt, dass alle Ergebnisse direkt im Hinblick auf die Figur interpretiert werden können. Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
+
+
+ Besonders aussagekräftig sind z. B. attributive Adjektive, die sich direkt auf die Figur beziehen. 
+
+<div class="todo_must">
+TODO:
+- attributive Adjektive zu ausgewählten Figuren abfragen
+- prüfen, ob ich die Verben auch ohne Parsing finden kann (ansonsten kurz das Vorgehen erläutern und wegen Zeitmangel blah blah blah)
+- Alle Wörter in Sätzen mit Heidi etc. zählen und ansehen
+- Kollokationen / Ko-Okkurrenzen im Fenster 5L/5R berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern
+</div>
 
 
 # 5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
 
-<div class="todo">
+<div class="todo_must">
 TODO:
 - Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)
+</div>
+
+</div class="todo">
 - Netzwerke 
   - welche Figuren treten häufig miteinander auf?
   - welche Wörter treten häufig mit welcher Figur auf?
@@ -269,7 +288,7 @@ TODO:
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
 
-<div class="todo">
+<div class="todo_must">
 TODO:
 - kurz zeigen, dass die Vorgehensweise immer angewendet werden kann, wenn es um Begriffsbestimmung im weitesten Sinn geht
 - auf Annotationslehrpfad verweisen
