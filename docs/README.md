@@ -275,7 +275,7 @@ TODO:
 - Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)
 </div>
 
-</div class="todo">
+<div class="todo">
 - Netzwerke 
   - welche Figuren treten häufig miteinander auf?
   - welche Wörter treten häufig mit welcher Figur auf?
