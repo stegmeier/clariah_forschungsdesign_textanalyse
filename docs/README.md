@@ -65,10 +65,6 @@ Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell mac
 
 {% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von _Heidi_ auf der Webseite von _Projekt Gutenberg_" %}
 
-<div class="todo_must">
-TODO: regex (.+\n)+ erläutern. Auf Tutorials zu Regex verweisen (auch auf Testumgebungen wie https://regexr.com/, https://regex101.com/)
-</div>
-
 Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:
 
 `[Titel des zu findenden Kapitels][Zeilenumbruch][beliebiger Text][Titel des folgenden Kapitels][Zeilenumbruch]`
@@ -77,7 +73,18 @@ Suche nach dem Kapitel "Fräulein Rottenmeier hat einen unruhigen Tag":
 
 `Fräulein Rottenmeier hat einen unruhigen Tag\n(.+\n)+Im Hause Sesemann geht's unruhig zu\n`
 
-Der Text-Editor findet nun sowohl die beiden Kapitel-Titel als auch allen Text dazwischen. Das Suchergebnis kann bequem kopiert und in eine neue Datei eingefügt werden. Um die Reihenfolge der Kapitel auch bei der späteren Analyse verwenden zu können, sollten die Dateinamen eine fortlaufende Kapitelzählung enthalten, also z. B. `heidi_kap_1_zum-alm-oehi-hinauf.txt`
+Der Text-Editor findet nun sowohl die beiden Kapitel-Titel als auch allen Text dazwischen, der durch den (komplexen) regulären Ausdruck `\n(.+\n)+` dargestellt wird. Die Bedeutung der einzelnen Komponenten ist dabei wie folgt:
+
+- `\n` steht für einen Zeilenumbruch (in Linux und Unix-Derivaten). Windows-Zeilenenden bestehen aus der Kombination eines Carriage-Returns, der durch `\r` dargestellt wird und einem Zeilenumbruch. Insgesamt also `\r\n`
+- runde Klammern werden dazu genutzt, einzelne Komponenten zu Gruppen zusammenzufassen
+ - der Punkt `.` steht für jeden beliebigen Buchstaben inkl. Leerzeichen
+ - das Plus `+` ist ein sogenannter Quantor, der sich auf das Zeichen davor bezieht und bedeutet "1 oder mehr"
+ - innerhalb der Gruppe wird also beliebiger Text mit Leerzeichen bis zu einem Zeilenumbruch gefunden; da hinter der Gruppe ein weiteres `+` folgt, wird die Gruppe so oft gefunden, bis der Text "Im Hause Sesemann ..." anfängt
+
+Das Suchergebnis kann bequem kopiert und in eine neue Datei eingefügt werden. Um die Reihenfolge der Kapitel auch bei der späteren Analyse verwenden zu können, sollten die Dateinamen eine fortlaufende Kapitelzählung enthalten, also z. B. `heidi_kap_1_zum-alm-oehi-hinauf.txt`
+
+**Hilfen zu regulären Ausdrücken:** Online stehen zahlreiche Tutorials, z. B. [Regular Expressions info (auf Englisch)](https://www.regular-expressions.info/quickstart.html), [SELFHTML (auf Deutsch)](https://wiki.selfhtml.org/wiki/Regul%C3%A4rer_Ausdruck) und Testumgebungen, z. B. [regex101 (auf Englisch)](https://regex101.com/), [regexr (auf Englisch)](https://regexr.com/) für reguläre Ausdrücke zur Verfügung.
+
 
 # 4. Text analysieren
 
