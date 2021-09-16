@@ -267,11 +267,11 @@ TODO:
 
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
 
-Strategie 1: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
+<a name="strategie_1">Strategie 1</a>: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
    1. attributive Adjektive
    2. Prädikate inkl. Prädikativen in Sätzen, deren Subjekt die gesuchte Figur ist
 
-Strategie 2: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
+<a name="strategie_2">Strategie 2</a>: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
    1. Wörter im selben Satz wie die Figur
    2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
 
@@ -287,7 +287,7 @@ Beide Strategien bzw. auch alle Unterstrategien können zu aussagekräftigen Erg
 
 **Anmerkungen zu Strategie 1**
 
-Der Vorteil der ersten Strategie kann darin liegen, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
+Der Vorteil der [ersten Strategie](#strategie_1) kann darin liegen, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
 
 *Anmerkung zu Strategie 1.1:*
 
@@ -328,7 +328,7 @@ Die Relationen zwischen den Satzkonstituenten müssen mit einem Parser ausgezeic
 
 **Anmerkungen zu Strategie 2**
 
-Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
+Bei der [zweiten Strategie](#strategie_2) kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
 
 *Anmerkungen zu Strategie 2.1*
 
