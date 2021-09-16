@@ -18,6 +18,8 @@
     - [Aussagen über Figuren erheben](#aussagen-über-figuren-erheben)
 - [5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
   - [Erweiterungen](#erweiterungen)
+    - [Komplexere Abfragestrategien](#komplexere-abfragestrategien)
+    - [Netzwerke von Figureninteraktionen](#netzwerke-von-figureninteraktionen)
     - [XML-Ressource erstellen (statt Tabelle)](#xml-ressource-erstellen-statt-tabelle)
 - [6. Übertragbarkeit auf andere Forschungsinteressen](#6-übertragbarkeit-auf-andere-forschungsinteressen)
 
@@ -193,7 +195,7 @@ Die ursprüngliche Tabelle wurde um die Angaben zu "Großvater(s)" und "(Alm-)*�
 
 {% include image.html url="images/tundra_per_sorting_help.png" description="Zwischenschritt mit Sortierhilfe" %}
 
-Nach Einfügen einer Spalte "Nennform" und Ausbleden der Sortierspalten, sieht das Ergebnis so aus:
+Nach Einfügen einer Spalte "Nennform" und Ausblenden der Sortierspalten, sieht das Ergebnis so aus:
 
 {% include image.html url="images/tundra_per_cleaned_and_enhanced.png" description="Tabelle der häufigsten (> 100) Figurenbezeichnungen" %}
 
@@ -246,24 +248,13 @@ TODO
 
 Wie oben schon angedeutet, bieten Konkordanzen (die Textumgebung, in der Figuren genannt werden) eine gute Möglichkeit, mehr über einzelne Figuren zu erfahren. Die Möglichkeit, alle Konkordanzen ergebnisoffen zu lesen und zunächst kategorienfrei "interessante" Stellen zu markieren, ist vor allem dann sinnvoll, wenn der Gefahr entgegengewirkt werden soll, Kategorien zu verwenden, die aus irgendeinem Grund dem Text nicht angemessen sind. Ein eher formales Beispiel hierfür wäre eine Kategorisierung in "falsch" und "richtig" auf grammatischer Ebene, die die Pronominalisierung von "es" für "Heidi" als "falsch" annotieren würde. Ohne Perspektivierung, dass dies aus heutiger oder aus Sicht der Standardgrammatik falsch ist, wäre dies unangemessen. Angemessenheit der verwendeten Kategorien leitet sich ansonsten hauptsächlich aus der Fragestellung ab. Dementsprechend sind nur solche Kategorien angemessen, die es erlauben, die Fragestellung konstruktiv zu bearbeiten.
 
-Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. Hierfür können zwei Strategien grob unterschieden werden.
-1. Zählung aller Wörter, die sich direkt auf eine Figur beziehen
-   1. z. B. attributive Adjektive
-   2. Verben in Sätzen, deren Subjekt die gesuchte Figur ist
-2. Zählung aller Wörter, die in der Nähe zu einer Figurennennung auftreten, z. B.
-   1. Wörter im selben Satz wie die Figur
-   2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
-   
-Beide Strategien führen zu aussagekräftigen Ergebnissen, wobei der Vorteil der ersten darin liegt, dass alle Ergebnisse direkt im Hinblick auf die Figur interpretiert werden können. Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
+Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. 
 
-
- Besonders aussagekräftig sind z. B. attributive Adjektive, die sich direkt auf die Figur beziehen. 
+Einen ersten Eindruck können z. B. attributive Adjektive vermitteln, die sich direkt auf die Figur beziehen. Auch Wortformen bzw. Lemmata, die in einem bestimmten Umfeld (z. B. 5 Tokens links und 5 Tokens rechts) des Suchausdrucks auftreten (= Ko-Okkurrenzen), können thesenbildend wirken.
 
 <div class="todo_must">
 TODO:
 - attributive Adjektive zu ausgewählten Figuren abfragen
-- prüfen, ob ich die Verben auch ohne Parsing finden kann (ansonsten kurz das Vorgehen erläutern und wegen Zeitmangel blah blah blah)
-- Alle Wörter in Sätzen mit Heidi etc. zählen und ansehen
 - Kollokationen / Ko-Okkurrenzen im Fenster 5L/5R berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern
 </div>
 
@@ -275,6 +266,36 @@ TODO:
 - Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)
 </div>
 
+
+## Erweiterungen
+
+### Komplexere Abfragestrategien
+
+<div class="todo_must">
+- die weiteren Strategien kurz erläutern
+</div>
+Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
+1. Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
+   1. attributive Adjektive
+   2. Prädikate inkl. Prädikativen in Sätzen, deren Subjekt die gesuchte Figur ist
+2. Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
+   1. Wörter im selben Satz wie die Figur
+   2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
+
+"Auswerten" kann in diesem Zusammenhang unterschiedliche Vorgehensweisen bezeichnen: Eine Wortliste nach Häufigkeit zu ordnen ist bereits eine Form der Auswertung der Zählung. Eine Wortliste nach Wortart und dann nach Häufigkeit zu ordnen, ist eine weitere Möglichkeit. Auf diese Weise können z. B. sehr gut Autosemantika von Synsemantika getrennt betrachtet werden, was die Thesenbildung darüber ermöglicht, worum (= Substantive) es im Text oder einem Textabschnitt geht und welche Bewertungen eine Rolle spielen (= Adjektive, adverbial gebrauchte Adjektive). Eine weitere Form der Auswertung wäre zu berechnen, ob die Häufigkeit, mit der eine Wortform oder ein Lemma mit einem Suchausdruck zusammen auftritt, statistisch signifikant ist (= überzufällig häufig bzw. häufiger als aufgrund des vorliegenden Wortmaterials erwartet). Anmerkung: Geht das Forschungsinteresse über Muster auf der Ebene der Lexik hinaus, können z. B. auch statistisch signifikante Ko-Okkurrenzen von Wortarten berechnet werden. Auch diese Berechnungen können vergleichend für bestimmte Umgebungen durchgeführt werden. Es können also z. B. Sätze, in denen eine bestimmte Figur bzw. ein bestimmter Suchausdruck auftritt, mit Sätzen verglichen werden, wo dies nicht der Fall ist oder in denen eine bestimmte andere Figur bzw. Suchausdruck auftritt. Auch hier können die Umgebungsbeschränkungen weiter differenziert werden, also z. B. der Verlauf über den Text in Kapitel oder einer ähnlichen Einteilung untersucht werden. 
+
+Je nach Forschungsinteresse und Fragestellung spielt das Verstehen der Wortformen und Lemmata im Textzusammenhang eine große Rolle (= hermeneutische Interpretation). Alle genannten Unterstrategien können daher auch als Grundlage verstanden dafür verstanden werden, wie die vielversprechendsten Konkordanzen gefunden werden können. Diese werden dann wie oben bereits dargestellt im Zusammenhang gelesen und interpretiert.
+   
+Beide Strategien bzw. auch alle Unterstrategien können zu aussagekräftigen Ergebnissen führen, wobei der Vorteil der ersten darin liegen kann, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
+
+Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
+
+Die folgenden Tabellen präsentieren einen Überblick über die Strategien und die (technischen) Voraussetzungen für ihre Anwendung:
+
+{include }
+
+
+### Netzwerke von Figureninteraktionen
 <div class="todo">
 - Netzwerke 
   - welche Figuren treten häufig miteinander auf?
@@ -283,13 +304,16 @@ TODO:
 </div>
 
 
-## Erweiterungen 
 ### XML-Ressource erstellen (statt Tabelle)
+<div class="todo">
+- prüfen, ob es einen einfachen TEI-Standard für solche Ressourcen gibt
+</div>
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
 
 <div class="todo_must">
 TODO:
+- vor allem darauf hinweisen, dass die quantitativen Abfragen auch zu Beginn eines Vorhabens ausgeführt werden können, um Suchausdrücke zu identifizieren, die von Interesse für die Fragestellung sind (Baker's semantisch klassifizierte Wortformen, Lemma-Liste von Heidi)
 - kurz zeigen, dass die Vorgehensweise immer angewendet werden kann, wenn es um Begriffsbestimmung im weitesten Sinn geht
 - auf Annotationslehrpfad verweisen
 - evtl. Bakers Fuchsjagd kurz als Beispiel dafür zeigen, dass auch hier Ko-Text-Analysen (gepaart mit Metadaten) die Grundlage der Vorgehensweise bilden 
