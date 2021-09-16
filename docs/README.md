@@ -271,16 +271,17 @@ TODO:
 
 ### Komplexere Abfragestrategien
 
-<div class="todo_must">
-- die weiteren Strategien kurz erläutern
-</div>
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
-1. Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
+
+Strategie 1: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
    1. attributive Adjektive
    2. Prädikate inkl. Prädikativen in Sätzen, deren Subjekt die gesuchte Figur ist
-2. Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
+
+Strategie 2: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
    1. Wörter im selben Satz wie die Figur
    2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
+
+Sowohl Strategie 2.1 als auch Strategie 2.2 ruhen auf der Auswertung von Ko-Okkurrenzen (bzw. Kollokationen, falls das gemeinsame Auftreten als konventionalisiert verstanden werden kann wie z. B. das gemeinsame Auftreten von "Zähne" und "putzen".)
 
 "Auswerten" kann in diesem Zusammenhang unterschiedliche Vorgehensweisen bezeichnen: Eine Wortliste nach Häufigkeit zu ordnen ist bereits eine Form der Auswertung der Zählung. Eine Wortliste nach Wortart und dann nach Häufigkeit zu ordnen, ist eine weitere Möglichkeit. Auf diese Weise können z. B. sehr gut Autosemantika von Synsemantika getrennt betrachtet werden, was die Thesenbildung darüber ermöglicht, worum (= Substantive) es im Text oder einem Textabschnitt geht und welche Bewertungen eine Rolle spielen (= Adjektive, adverbial gebrauchte Adjektive). Eine weitere Form der Auswertung wäre zu berechnen, ob die Häufigkeit, mit der eine Wortform oder ein Lemma mit einem Suchausdruck zusammen auftritt, statistisch signifikant ist (= überzufällig häufig bzw. häufiger als aufgrund des vorliegenden Wortmaterials erwartet). Anmerkung: Geht das Forschungsinteresse über Muster auf der Ebene der Lexik hinaus, können z. B. auch statistisch signifikante Ko-Okkurrenzen von Wortarten berechnet werden. Auch diese Berechnungen können vergleichend für bestimmte Umgebungen durchgeführt werden. Es können also z. B. Sätze, in denen eine bestimmte Figur bzw. ein bestimmter Suchausdruck auftritt, mit Sätzen verglichen werden, wo dies nicht der Fall ist oder in denen eine bestimmte andere Figur bzw. Suchausdruck auftritt. Auch hier können die Umgebungsbeschränkungen weiter differenziert werden, also z. B. der Verlauf über den Text in Kapitel oder einer ähnlichen Einteilung untersucht werden. 
 
@@ -298,6 +299,7 @@ Der Vorteil der ersten Strategie kann darin liegen, dass die Ergebnisse eher dir
 
 Nominaler Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die kleine Tochter&quot; durch die NP
 &quot;der glücklichen Eltern&quot; ergänzt. Gezählt werden nun alle Ausdrücke außer &quot;Tochter&quot;. Wenn 1a und 1b in einem Text auftreten würden, wären die Frequenzen der Wortformen also:
+
 -die: 2
 -kleine: 2
 -der: 1
@@ -305,6 +307,7 @@ Nominaler Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die klei
 Eltern: 1
 
 Die Zählung von Lemmata würde ergeben:
+
 -d: 3 [&quot;d&quot; wird als Abkürzung für den bestimmten Artikel in manchen Lemmatisierern verwendet]
 -glücklich: 3 [jeweils Lemma von &quot;glückliche&quot; und &quot;glücklichen&quot;]
 -Eltern: 1
@@ -316,7 +319,9 @@ Die Konstituenten (Phrasen) der einzelnen Sätze müssen mit einem Parser ausgez
 - die Phrasen können als Textdatei heruntergeladen werden und dann als neuer Text in WebLicht oder einem anderen Werkzeug in Tokens zerlegt werden.
 
 *Anmerkung zu Strategie 1.2:*
+
 Wie in Beispiel 1 wird wieder alles außer dem Subjekt gezählt:
+
 -spielte: 1
 -war: 1
 -glücklich: 1
@@ -334,7 +339,6 @@ Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle W�
 *Anmerkungen zu Strategie 2.1*
 
 Die Abfragesprache muss es erlauben, einen Umkreis um einen Suchausdruck herum zu definieren.
-
 
 *Anmerkungen zu Strategie 2.2*
 
