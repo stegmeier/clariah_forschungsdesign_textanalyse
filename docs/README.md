@@ -25,7 +25,7 @@
 
 # 1. Abstract
 
-Das <span name="forschungsdesign">Forschungsdesign<span> "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben
+Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben
 - Roman in digitaler Form finden (s. [Text finden](#3-text-finden))
 - Text automatisch annotieren lassen, um u. a. Personen (= Figuren) finden zu können (s. [Text analysieren](#4-text-analysieren))
 - Anhand von Konkordanzen und Ko-Okkurrenzen Beschreibungen der Figuren generieren
@@ -60,7 +60,7 @@ TODO:
 ## Text vorbereiten
 Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. erlaubt, das Auftreten und die Charakterisierung von Figuren im Verlauf der Handlung zu beschreiben. Die Zerlegung in Kapitel folgt dabei der Überlegung, dass die Einteilung in Kapitel in konventionellen Romanen in einer Beziehung zum Handlungsfortschritt steht. Dies kann beim ausgewählten Text unterstellt werden, da er eine fortschreitende Handlung erzählt, also z. B. keines der Kapitel einen Rückblick auf vorangegangene Ereignisse bietet.
 
-Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
+Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor" class="default_text_color">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
 
 
 {% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von _Heidi_ auf der Webseite von _Projekt Gutenberg_" %}
@@ -267,11 +267,11 @@ TODO:
 
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
 
-<a name="strategie_1">Strategie 1</a>: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
+<a name="strategie_1" class="default_text_color">Strategie 1</a>: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
    1. attributive Adjektive
    2. Prädikate inkl. Prädikativen in Sätzen, deren Subjekt die gesuchte Figur ist
 
-<a name="strategie_2">Strategie 2</a>: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
+<a name="strategie_2" class="default_text_color">Strategie 2</a>: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
    1. Wörter im selben Satz wie die Figur
    2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
 
@@ -357,7 +357,6 @@ Wenn Texte in relevante Teile zerlegt werden, die z. B. ganze Textabschnitte umf
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
 
-Test [Link](#forschungsdesign)
 
 <div class="todo_must">
 TODO:
