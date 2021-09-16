@@ -294,17 +294,17 @@ Der Vorteil der [ersten Strategie](#strategie_1) kann darin liegen, dass die Erg
 Nominaler Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die kleine Tochter&quot; durch die NP
 &quot;der glücklichen Eltern&quot; ergänzt. Gezählt werden nun alle Ausdrücke außer &quot;Tochter&quot;. Wenn 1a und 1b in einem Text auftreten würden, wären die Frequenzen der Wortformen also:
 
--die: 2
--kleine: 2
--der: 1
--glücklichen: 1-
-Eltern: 1
+- die: 2
+- kleine: 2
+- der: 1
+- glücklichen: 1
+- Eltern: 1
 
 Die Zählung von Lemmata würde ergeben:
 
--d: 3 [&quot;d&quot; wird als Abkürzung für den bestimmten Artikel in manchen Lemmatisierern verwendet]
--glücklich: 3 [jeweils Lemma von &quot;glückliche&quot; und &quot;glücklichen&quot;]
--Eltern: 1
+- d: 3 [&quot;d&quot; wird als Abkürzung für den bestimmten Artikel in manchen Lemmatisierern verwendet]
+- glücklich: 3 [jeweils Lemma von &quot;glückliche&quot; und &quot;glücklichen&quot;]
+- Eltern: 1
 
 Voraussetzungen für die Nutzung:
 
@@ -316,9 +316,9 @@ Die Konstituenten (Phrasen) der einzelnen Sätze müssen mit einem Parser ausgez
 
 Wie in Beispiel 1 wird wieder alles außer dem Subjekt gezählt:
 
--spielte: 1
--war: 1
--glücklich: 1
+- spielte: 1
+- war: 1
+- glücklich: 1
 
 Voraussetzungen für die Nutzung:
 Die Relationen zwischen den Satzkonstituenten müssen mit einem Parser ausgezeichnet werden. Die	Relationen müssen so abgefragt werden können, dass sie die Konstituenten zählbar ausgeben.
