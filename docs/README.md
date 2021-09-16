@@ -25,7 +25,7 @@
 
 # 1. Abstract
 
-Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben
+Das <span name="forschungsdesign">Forschungsdesign<span> "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben
 - Roman in digitaler Form finden (s. [Text finden](#3-text-finden))
 - Text automatisch annotieren lassen, um u. a. Personen (= Figuren) finden zu können (s. [Text analysieren](#4-text-analysieren))
 - Anhand von Konkordanzen und Ko-Okkurrenzen Beschreibungen der Figuren generieren
@@ -356,6 +356,8 @@ Wenn Texte in relevante Teile zerlegt werden, die z. B. ganze Textabschnitte umf
 </div>
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
+
+Test [Link](#forschungsdesign)
 
 <div class="todo_must">
 TODO:
