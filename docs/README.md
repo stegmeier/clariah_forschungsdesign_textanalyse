@@ -290,11 +290,11 @@ Beide Strategien bzw. auch alle Unterstrategien können zu aussagekräftigen Erg
 
 {% include strategie_1.html %}
 
-####Anmerkungen zu Strategie 1
+**Anmerkungen zu Strategie 1**
 
 Der Vorteil der ersten Strategie kann darin liegen, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
 
-**Anmerkung zu Strategie 1.1:**
+*Anmerkung zu Strategie 1.1:*
 
 Nominaler Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die kleine Tochter&quot; durch die NP
 &quot;der glücklichen Eltern&quot; ergänzt. Gezählt werden nun alle Ausdrücke außer &quot;Tochter&quot;. Wenn 1a und 1b in einem Text auftreten würden, wären die Frequenzen der Wortformen also:
@@ -315,7 +315,7 @@ Die Konstituenten (Phrasen) der einzelnen Sätze müssen mit einem Parser ausgez
 - die Tokens der Phrasen können direkt in der Arbeitsumgebung als Frequenzliste dargestellt werden
 - die Phrasen können als Textdatei heruntergeladen werden und dann als neuer Text in WebLicht oder einem anderen Werkzeug in Tokens zerlegt werden.
 
-**Anmerkung zu Strategie 1.2:**
+*Anmerkung zu Strategie 1.2:*
 Wie in Beispiel 1 wird wieder alles außer dem Subjekt gezählt:
 -spielte: 1
 -war: 1
@@ -327,16 +327,16 @@ Die Relationen zwischen den Satzkonstituenten müssen mit einem Parser ausgezeic
 
 {% include strategie_2.html %}
 
-####Anmerkungen zu Strategie 2
+**Anmerkungen zu Strategie 2**
 
 Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
 
-**Anmerkungen zu Strategie 2.1**
+*Anmerkungen zu Strategie 2.1*
 
 Die Abfragesprache muss es erlauben, einen Umkreis um einen Suchausdruck herum zu definieren.
 
 
-**Anmerkungen zu Strategie 2.2**
+*Anmerkungen zu Strategie 2.2*
 
 Der Text muss auf die inhaltlichen Kriterien hin annotiert werden um die relevanten Textausschnitte in einer Abfrage ansprechen zu können. Diese Form der Aufbereitung ist sehr zeitaufwendig, da der gesamte Text entsprechend annotiert werden muss. Als Hilfe für die Annotationsaufgaben kommen externe Werkzeuge in Frage, z. B.: WebAnno (online verfügbar nutzbar unter](https://webanno.sfs.uni-tuebingen.de), die lokal nutzbare Weiterentwicklung von WebAnno, [INCEpTION](https://inception-project.github.io/), oder das eher für literaturwissenschaftliche manuelle Annotation entwickelte und online nutzbare System [CATMA](https://catma.de/). Einen Überblick über Annotationsaufgaben bietet das Tutorial [Lehrpfad Annotation](https://stegmeier.github.io/clariah_annotation_tutorial/#3annotation-in-den-geisteswissenschaften) und das Tutorial ["Manuelle Annotation"](https://fortext.net/routinen/methoden/manuelle-annotation) der Plattform [forText](https://fortext.net). Für die Arbeit mit den einzelnen Werkzeugen stehen jeweils eigene Tutorials und Handbücher zur Verfügung, die über die jeweiligen Webseiten zugänglich sind.
 
