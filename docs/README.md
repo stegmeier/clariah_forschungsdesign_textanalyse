@@ -292,7 +292,9 @@ Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle W�
 
 Die folgenden Tabellen präsentieren einen Überblick über die Strategien und die (technischen) Voraussetzungen für ihre Anwendung:
 
-{include }
+{% include strategie_1.html %}
+
+{% include strategie_2.html %}
 
 
 ### Netzwerke von Figureninteraktionen
