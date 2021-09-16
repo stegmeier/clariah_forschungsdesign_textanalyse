@@ -201,7 +201,7 @@ Nach Einfügen einer Spalte "Nennform" und Ausblenden der Sortierspalten, sieht 
 
 ### Kurzer Exkurs zu Worthäufigkeiten
 
-Absolute Häufigkeiten sind in korpusbasierten Textanalysen nur dann sinnvoll, wenn das gesamte Korpus aus genau einem Text besteht, wie es hier der Fall ist. Um aber z. B. Aussagen darüber zu treffen, ob der Name einer Hauptfigur eines Romans in Text A häufiger genannt wird als in Text B, müssen relative Häufigkeiten verwendet werden, da sonst z. B. unterschiedliche Textlängen nicht in den Vergleich einfließen. Textlängen werden üblicherweise durch die Gesamtanzahl der Tokens ausgedrückt. Um herauszufinden, aus wie vielen Tokens der vorliegende Text besteht, können wir nach allen Buchstabenketten auf der Token-Ebene suchen: `[token=/.+/]
+Absolute Häufigkeiten sind in korpusbasierten Textanalysen nur dann sinnvoll, wenn das gesamte Korpus aus genau einem Text besteht, wie es hier der Fall ist. Um aber z. B. Aussagen darüber zu treffen, ob der Name einer Hauptfigur eines Romans in Text A häufiger genannt wird als in Text B, müssen relative Häufigkeiten verwendet werden, da sonst z. B. unterschiedliche Textlängen nicht in den Vergleich einfließen. Textlängen werden üblicherweise durch die Gesamtanzahl der Tokens ausgedrückt. Um herauszufinden, aus wie vielen Tokens der vorliegende Text besteht, können wir nach allen Buchstabenketten auf der Token-Ebene suchen: `[token=/.+/]`
 
 {% include image.html url="images/tundra_tokens_query_and_result.png" description="Suchergebnisse für die Suche nach allen Wortformen." %}
 
@@ -215,19 +215,18 @@ Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausn
 
 Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Eine Figur, die nur in bestimmten Teilen eines Buches auftritt, spielt eine andere Rolle für das gesamte Buch, als eine Figur, die in jedem oder fast jedem Kapitel auftritt. Aber auch eine Figur, die in jedem Kapitel vorkommt, kann eine untergeordnete Rolle spielen. Daher ist es auch hier sinnvoll, die Häufigkeit, mit der eine Figur (bzw. ein Wort oder ein annotierte Kategorie wie _Per_) in einem bestimmten Textabschnitt genannt wird, in die Untersuchung der Verteilung einzubeziehen. Wenn aber z. B. nur das Personal eines bestimmten Textabschnittes bestimmt werden soll, genügt es zu prüfen, ob eine Figur genannt wird oder nicht. Wenn die Ergebnisse auch Rückschlüsse darauf zulässen, wie wichtig ein Ausdruck oder eine Kategorie für die Interpretation oder das Verstehen des Textabschnittes ist, muss die Häufigkeitsverteilung bestimmt werden. In diesem Zusammenhang werden die oben angesprochenen relativen Häufigkeiten auch für die Analyse eines einzelnen Textes wichtig, da nur so herausgefunden werden kann, ob eine Figur bzw. Ausdruck in einem Kapitel häufiger als in einem anderen genannt wird. Die relative Häufigkeit wird dabei als Verhältnis des gesuchten Ausdrucks zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt verstanden.
 
-Da wir den Text schon zu Beginn in Kapitel (= Teilkorpora) zerlegt haben, können wir die Häufigkeitsverteilung auf dieser Grundlage untersuchen. WebLicht bzw. TüNDRA hierfür zu nutzen, ist ein wenig umständlich, da jeder Text einzeln als Korpus geladen und durchsucht werden muss. Wenn eine sehr große Menge an Teilkorpora vorliegt, ist es besser, ein Korpusverwaltungssystem wie CQPweb, oder einen Service wie [Voyant](https://voyant-tools.org) zu nutzen. Im Folgenden wird an zwei Kapiteln demonstriert, wie die Aufgabe mit TüNdra gelöst werden kann. Die Analyse aller Kapitel wird mit Voyant gezeigt.
+Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten gefunden werden, um den Text zu zerlegen und so Aussagen darüber zu ermöglichen, wie häufig welche Figur wann genannt wird. Die Textanalyse-Umgebung [Voyant](https://voyant-tools.org) zerlegt ein Korpus, das aus einem einzigen Text besteht, standardmäßig in zehn Teile. Neben weiteren Werkzeugen zeigt es die Verteilung von Wörtern auf diese zehn Teile auf der Grundlage der relativen Häufigkeiten innerhalb der Abschnitte als Grafik:
 
-<div class="todo_must">
+{% include image.html url="images/voyant_characters_dispersion_fulltext_corpus.png" description="Verteilung der häufigsten Figuren auf den in Zehntel zerlegten Text in Voyant" %}
+
+Da wir den Text schon zu Beginn in Kapitel (= Teilkorpora) zerlegt haben, können wir die Häufigkeitsverteilung auf dieser Grundlage untersuchen. WebLicht bzw. TüNDRA hierfür zu nutzen, ist ein wenig umständlich, da jeder Text einzeln als Korpus geladen und durchsucht werden muss. Wenn eine sehr große Menge an Teilkorpora vorliegt, ist es besser, ein Korpusverwaltungssystem wie CQPweb, oder einen Service wie [Voyant](https://voyant-tools.org) zu nutzen. 
+
+<div class="todo">
+Im Folgenden wird an zwei Kapiteln demonstriert, wie die Aufgabe mit TüNdra gelöst werden kann. Die Analyse aller Kapitel wird mit Voyant gezeigt.
 TODO:
 - zwei Kapitel zur Demonstration relativer Häufigkeiten in WebLicht untersuchen
 - relative Häufigkeiten (zu allen Tokens) von Heidi etc. berechnen  
 </div>
-
-
-
-Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten gefunden werden, um den Text zu zerlegen und so Aussagen darüber zu ermöglichen, wie häufig welche Figur wann genannt wird. Die Textanalyse-Umgebung [Voyant](https://voyant-tools.org) zerlegt ein Korpus, das aus einem einzigen Text besteht, standardmäßig in zehn Teile. Neben weiteren Werkzeugen zeigt es die Verteilung von Wörtern auf diese zehn Teile als Grafik:
-
-{% include image.html url="images/voyant_characters_dispersion_fulltext_corpus.png" description="Verteilung der häufigsten Figuren auf den in Zehntel zerlegten Text in Voyant" %}
 
 In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Texten geladen werden. Dies erlaubt es auch, die Verteilung der Figurennennungen kapitelweise zu visualisieren. Allerdings muss hierfür die Benennung der Dokumente so angepasst werden, dass die Kapitelzählung richtig interpretiert wird. Wird dies nicht getan, erhält man beispielsweise folgendes Ergebnis:
 
@@ -236,11 +235,6 @@ In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Te
 <div class="todo_must">
 TODO
 - Voyant-Analyse ausführen und erläutern
-</div>
-
-<div class="todo">
-TODO
-- WebLicht prüfen (Satzzählung)
 </div>
 
 
