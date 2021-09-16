@@ -4,37 +4,17 @@
 		<tr>
 			<th>Bezug zum Suchausdruck</th>
 			<th>Allgemeine Beispiele und Erläuterung</th>
-			<th>Voraussetzungen</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>Syntaktische Beziehung auf Phrasenebene</td>
-			<td>Beispiel 1: Begleitausdrücke des nominalen Kerns in einer (komplexen) Nominalphrase.<br>1a: &quot;die
-				glückliche Tochter&quot;<br>1b: &quot;die glückliche Tochter der glücklichen Eltern&quot;<br>Nominaler
-				Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die kleine Tochter&quot; durch die NP
-				&quot;der glücklichen Eltern&quot; ergänzt.<br>Gezählt werden nun alle Ausdrücke außer
-				&quot;Tochter&quot;. Wenn 1a und 1b in einem Text auftreten würden, wären die Frequenzen der Wortformen
-				also:<br>die: 2<br>kleine: 2<br>der: 1<br>glücklichen: 1<br>Eltern: 1<br>Die Zählung von Lemmata würde
-				ergeben:<br>d: 3 [&quot;d&quot; wird als Abkürzung für den bestimmten Artikel in manchen Lemmatisierern
-				verwendet]<br>glücklich: 3 [jeweils Lemma von &quot;glückliche&quot; und
-				&quot;glücklichen&quot;]<br>Eltern: 1</td>
-			<td>Aufbereitung des Textes bzw. der Texte: Die Konstituenten (Phrasen) der einzelnen Sätze müssen mit einem
-				Parser ausgezeichnet werden.<br>Anforderungen an die Abfragemöglichkeiten: Die Ergebnisse der Abfragen
-				müssen auf Tokenebene gezählt werden können. Möglichkeiten sind: - die Tokens der Phrasen können direkt
-				in der Arbeitsumgebung als Frequenzliste dargestellt werden<br>- die Phrasen können als Textdatei
-				heruntergeladen werden und dann als neuer Text in WebLicht oder einem anderen Werkzeug in Tokens zerlegt
-				werden.</td>
+			<td>1.1 Syntaktische Beziehung auf Phrasenebene</td>
+			<td>Beispiel 1: Begleitausdrücke des nominalen Kerns in einer (komplexen) Nominalphrase.<br>1a: &quot;die glückliche Tochter&quot;<br>1b: &quot;die glückliche Tochter der glücklichen Eltern&quot;</td>
 		</tr>
 		<tr>
-			<td>Syntaktische Beziehung auf Satzebene</td>
+			<td>1.2 Syntaktische Beziehung auf Satzebene</td>
 			<td>Beispiel 2: Prädikate (mit und ohne Prädikativ) in Sätzen, deren Subjekt der Suchausdruck ist<br>2a:
-				&quot;Das kleine Kind spielte.&quot; (&quot;spielte&quot; ist Prädikat)<br>2b: &quot;Das kleine Kind war
-				glücklich.&quot; (&quot;war glücklich&quot; ist Prädikat bestehend aus finitem Hilfsverb und
-				Prädikativ)<br>Wie in Beispiel 1 wird wieder alles außer dem Subjekt gezählt:<br>spielte: 1<br>war:
-				1<br>glücklich: 1</td>
-			<td>Die Relationen zwischen den Satzkonstituenten müssen mit einem Parser ausgezeichnet werden. Die
-				Relationen müssen so abgefragt werden können, dass sie die Konstituenten zählbar ausgeben.</td>
+				&quot;Das kleine Kind spielte.&quot; (&quot;spielte&quot; ist Prädikat)<br>2b: &quot;Das kleine Kind war glücklich.&quot; (&quot;war glücklich&quot; ist Prädikat bestehend aus finitem Hilfsverb und Prädikativ)</td>
 		</tr>
 	</tbody>
 </table>

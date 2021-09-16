@@ -286,15 +286,50 @@ Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unter
 
 Je nach Forschungsinteresse und Fragestellung spielt das Verstehen der Wortformen und Lemmata im Textzusammenhang eine große Rolle (= hermeneutische Interpretation). Alle genannten Unterstrategien können daher auch als Grundlage verstanden dafür verstanden werden, wie die vielversprechendsten Konkordanzen gefunden werden können. Diese werden dann wie oben bereits dargestellt im Zusammenhang gelesen und interpretiert.
    
-Beide Strategien bzw. auch alle Unterstrategien können zu aussagekräftigen Ergebnissen führen, wobei der Vorteil der ersten darin liegen kann, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
-
-Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
-
-Die folgenden Tabellen präsentieren einen Überblick über die Strategien und die (technischen) Voraussetzungen für ihre Anwendung:
+Beide Strategien bzw. auch alle Unterstrategien können zu aussagekräftigen Ergebnissen führen. Die folgenden Tabellen präsentieren einen Überblick über die Strategien und die (technischen) Voraussetzungen für ihre Anwendung.
 
 {% include strategie_1.html %}
 
+####Anmerkungen zu Strategie 1
+
+Der Vorteil der ersten Strategie kann darin liegen, dass die Ergebnisse eher direkt im Hinblick auf die Figur interpretiert werden können. Allerdings hängt dies in der zweiten Variante der ersten Strategie davon ab, dass möglichst alle Sätze korrekt geparst (= automatisch mit Zusatzinformation bezüglich der syntaktischen Relationen versehen) wurden. Eine weitere Hürde stellt die Abfrage und Weiterverarbeitung der Abfrageergebnisse dar. Das Korpusverwaltungssystem muss Abfragen ermöglichen, die als Ergebnis das gesamte Prädikat ausgeben.
+
+**Anmerkung zu den Beispielen in Strategie 1.1:**
+
+Nominaler Kern ist jeweils &quot;Tochter&quot;. In 1b wird die NP &quot;die kleine Tochter&quot; durch die NP
+&quot;der glücklichen Eltern&quot; ergänzt. Gezählt werden nun alle Ausdrücke außer &quot;Tochter&quot;. Wenn 1a und 1b in einem Text auftreten würden, wären die Frequenzen der Wortformen also:
+-die: 2
+-kleine: 2
+-der: 1
+-glücklichen: 1-
+Eltern: 1
+
+Die Zählung von Lemmata würde ergeben:
+-d: 3 [&quot;d&quot; wird als Abkürzung für den bestimmten Artikel in manchen Lemmatisierern verwendet]
+-glücklich: 3 [jeweils Lemma von &quot;glückliche&quot; und &quot;glücklichen&quot;]
+-Eltern: 1
+
+Voraussetzungen für die Nutzung:
+
+Die Konstituenten (Phrasen) der einzelnen Sätze müssen mit einem Parser ausgezeichnet werden. Anforderungen an die Abfragemöglichkeiten: Die Ergebnisse der Abfragen müssen auf Tokenebene gezählt werden können. Möglichkeiten sind:
+- die Tokens der Phrasen können direkt in der Arbeitsumgebung als Frequenzliste dargestellt werden
+- die Phrasen können als Textdatei heruntergeladen werden und dann als neuer Text in WebLicht oder einem anderen Werkzeug in Tokens zerlegt werden.
+
+**Anmerkung zu den Beispieln in Strategie 1.2:**
+Wie in Beispiel 1 wird wieder alles außer dem Subjekt gezählt:
+-spielte: 1
+-war: 1
+-glücklich: 1
+
+Voraussetzungen für die Nutzung:
+Die Relationen zwischen den Satzkonstituenten müssen mit einem Parser ausgezeichnet werden. Die	Relationen müssen so abgefragt werden können, dass sie die Konstituenten zählbar ausgeben.
+
+
 {% include strategie_2.html %}
+
+####Anmerkungen zu Strategie 2
+
+Bei der zweiten Strategie kann nicht davon ausgegangen werden, dass sich alle Wörter direkt auf die Figur bzw. den Suchausdruck beziehen. Dies ist vor allem bei der zweiten Variante der Fall, da hier auch satzübergreifend benachbarte Wörter berücksichtigt werden, die unter Umständen eine Figur charakterisieren, die im Satz zuvor genannt wurde. Dies ist vor allem dann der Fall, wenn eine hohe Zahl von Wörtern links und rechts vom Suchausdruck in die Zählung mit einfließt.
 
 
 ### Netzwerke von Figureninteraktionen
