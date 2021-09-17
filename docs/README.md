@@ -1,63 +1,61 @@
 # Forschungsdesign "korpusbasierte Textanalyse" <!-- omit in toc -->
 
-- [1. Abstract](#1-abstract)
-- [2. Vorüberlegungen](#2-vorüberlegungen)
-- [3. Text finden](#3-text-finden)
-  - [Text vorbereiten](#text-vorbereiten)
-- [4. Text analysieren](#4-text-analysieren)
-  - [Automatische Analyse und Annotation](#automatische-analyse-und-annotation)
-  - [Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen](#manuelle-bw-semi-automatische-analyse-das-annotierte-korpus-nutzen)
-    - [Figuren identifizieren](#figuren-identifizieren)
-    - [Zwischenergebnis 1](#zwischenergebnis-1)
-    - [Zwischenergebnis verfeinern](#zwischenergebnis-verfeinern)
-    - [Zwischenergebnis 2](#zwischenergebnis-2)
-    - [Zwischenergebnis 3](#zwischenergebnis-3)
-    - [Verfeinerung der PER-Liste](#verfeinerung-der-per-liste)
-    - [Kurzer Exkurs zu Worthäufigkeiten](#kurzer-exkurs-zu-worthäufigkeiten)
-    - [Häufigkeitsverteilung der Figuren über den Text](#häufigkeitsverteilung-der-figuren-über-den-text)
-    - [Aussagen über Figuren erheben](#aussagen-über-figuren-erheben)
-- [5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
-  - [Erweiterungen](#erweiterungen)
-    - [Komplexere Abfragestrategien](#komplexere-abfragestrategien)
-    - [Netzwerke von Figureninteraktionen](#netzwerke-von-figureninteraktionen)
-    - [XML-Ressource erstellen (statt Tabelle)](#xml-ressource-erstellen-statt-tabelle)
+- [1. Kurzbeschreibung](#1-kurzbeschreibung)
+- [2. Text finden](#2-text-finden)
+  - [2.1. Text vorbereiten](#21-text-vorbereiten)
+- [3. Text analysieren](#3-text-analysieren)
+  - [3.1. Automatische Analyse und Annotation](#31-automatische-analyse-und-annotation)
+  - [3.2. Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen](#32-manuelle-bw-semi-automatische-analyse-das-annotierte-korpus-nutzen)
+    - [3.2.1. Figuren identifizieren](#321-figuren-identifizieren)
+    - [3.2.2. Zwischenergebnis 1](#322-zwischenergebnis-1)
+    - [3.2.3. Zwischenergebnis verfeinern](#323-zwischenergebnis-verfeinern)
+    - [3.2.4. Zwischenergebnis 2](#324-zwischenergebnis-2)
+    - [3.2.5. Zwischenergebnis 3](#325-zwischenergebnis-3)
+    - [3.2.6. Verfeinerung der PER-Liste](#326-verfeinerung-der-per-liste)
+    - [3.2.7. Kurzer Exkurs zu Worthäufigkeiten](#327-kurzer-exkurs-zu-worthäufigkeiten)
+    - [3.2.8. Häufigkeitsverteilung der Figuren über den Text](#328-häufigkeitsverteilung-der-figuren-über-den-text)
+    - [3.2.9. Aussagen über Figuren erheben](#329-aussagen-über-figuren-erheben)
+- [4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#4-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
+- [5. Erweiterungen](#5-erweiterungen)
+  - [5.1. Komplexere Abfragestrategien](#51-komplexere-abfragestrategien)
+  - [5.2. Netzwerke von Figureninteraktionen](#52-netzwerke-von-figureninteraktionen)
+  - [5.3. Ergebnis als XML-Ressource erstellen (statt Tabelle)](#53-ergebnis-als-xml-ressource-erstellen-statt-tabelle)
 - [6. Übertragbarkeit auf andere Forschungsinteressen](#6-übertragbarkeit-auf-andere-forschungsinteressen)
 
-# 1. Abstract
+# 1. Kurzbeschreibung
 
-Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben
+Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusammenspiel der verschiedenen Dienste und Ressourcen, die von CLARIAH-DE angeboten werden. Die Aufgabe ist es, ein Verzeichnis der in einem Roman auftretenden Figuren zu erstellen. Daraus entstehen die folgenden Teilaufgaben:
+
 - Roman in digitaler Form finden (s. [Text finden](#3-text-finden))
 - Text automatisch annotieren lassen, um u. a. Personen (= Figuren) finden zu können (s. [Text analysieren](#4-text-analysieren))
-- Anhand von Konkordanzen und Ko-Okkurrenzen Beschreibungen der Figuren generieren
+- Anhand von Konkordanz-Analysen Beschreibungen der Figuren erstellen
 - Aus den Personen und den Beschreibungen ein Verzeichnis erstellen (s. [Figurenverzeichnis erstellen](#5-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen))
 
-Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden. Hierauf wird im [letzen Abschnitt](#6-übertragbarkeit-auf-andere-forschungsinteressen) noch einmal eingegangen.
+Neben der Untersuchung von Konkordanzen sind auch komplexere Such- und Analysestrategien sinnvoll. Auf diese wird unter [Erweiterungen](#5-erweiterungen) eingegangen.
 
-# 2. Vorüberlegungen
-
-Das Figurenverzeichnis soll neben den Namen der Figuren auch Ausschnitte aus dem Text präsentieren, die die jeweilige Figur möglichst gut charakterisieren.
+Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden. Hierauf wird im [letzen Abschnitt](#6-übertragbarkeit-auf-andere-forschungsinteressen) noch einmal eingegangen. 
 
 <div class="todo">
 TODO:
-- evtl. weitere Absichten ergänzen
-  - Netzwerk
-  - Metadaten aus anderen Quellen (z. B. GND) etc.)
-    - GND-Abfrage basteln
-      - curl https://lobid.org/gnd/search?q=Heidi -o "test_heidi_gnd.txt" findet zwar allerhand Zeug, darunter auch Verweise auf das Buch, mir ist aber noch nicht gelungen, die Abfrage auf die Figur "Heidi" zu beschränken
-      - Laut Wikipedia kann der Entitätentyp "Person" (Kürzel: "p") weiter unterteilt werden, wobei literarische Figuren als "pxl" codiert werden (s. https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entit%C3%A4tencodierung")
-      - wie dies als Filter eingesetzt wird, habe ich aber noch nicht verstanden
-
+<ul>
+<li>Am Ende Vorüberlegungen noch einmal auf Vollständigkeit prüfen</li>
+</ul>
 </div>
 
-# 3. Text finden
-<div class="todo_must">
-TODO:
-- die großen Möglichkeiten nennen und eine daraus auswählen
-  - TextGrid
-  - DTA
-</div>
+# 2. Text finden
 
-## Text vorbereiten
+Die Grundlage einer korpusbasierten Textanalyse ist ein Text in digitaler Form. Liegt der Text nur gedruckt vor, muss er gescannt und über OCR (_optical character recognition_) in maschinenlesbaren Text überführt werden. Das hierzu notwendige Vorgehen ist nicht Teil dieses Tutorials. Die OCR ist auch dann notwendig, wenn der Text zwar digitalisiert wurde, aber nur als eine Sammlung von Bildern vorliegt. Auch PDF-Dateien können ausschließlich aus Bildern bestehen. Ist dies für den gewünschten Text der Fall, muss auch hier die OCR durchgeführt werden. Auch PDFs, aus denen der Text extrahiert werden kann, sind nicht immer die beste Grundlage, da der Export in ein reines Textformat häufig Probleme bereitet. Die verbreitetsten Probleme sind dabei "harte" Zeilenumbrüche, fehlende Leerzeichen zwischen Zeilenumbrüchen, Inhalte aus Fuß- und/oder Kopfzeilen (Seitenzahlen, Autornamen, Titelangaben), die nach dem Export mitten im Text stehen und die Trennungszeichen am Zeilenende. Alle diese (und evtl. weitere) Phänomene müssen geprüft und bereinigt werden, bevor der Text weiterverarbeitet werden kann.
+
+Es ist aus diesem Grund von Vorteil, bereits entsprechend aufbereitete Texte zu verwenden. Verschiedene Repositorien bieten inzwischen einen Fundus an solchen Quellen an. Das [TextGrid Repositorium](https://textgrid.de) bietet in seiner [Digitalen Bibliothek](https://textgrid.de/digitale-bibliothek) eine Vielzahl an Texten aus Literatur, Philosophie, Kulturgeschichte und weiteren Kategorien an. Der Schwerpunkt liegt mit über 90.000 Texten auf der (historischen) Literatur. Das [Deutsche Text-Archiv (DTA)](https://www.deutschestextarchiv.de/), bestehend aus einem Kernkorpus und einer Erweiterung (DTAE) bietet sowohl Texte zum Download an als auch die direkte [Nutzung des gesamten Bestands als Korpus](https://www.deutschestextarchiv.de/doku/DDC-suche_hilfe). Die Texte verteilen sich auf die folgenden Kategorien (s. auch [die Erläuterungen zur Textauswahl](https://www.deutschestextarchiv.de/doku/textauswahl)):
+
+{% include image.html url="images/dta_ueberblick.png" description="Zusammensetzung des DTA-Korpus" %}
+
+Auch das [Projekt Gutenberg](https://www.projekt-gutenberg.org/) eignet sich sehr gut, um digitale Texte in verarbeitbarer Form zu finden. Es ist allerdings darauf ausgelegt, dass die Texte im Browser gelesen werden und bietet keine Downloadmöglichkeit.
+
+Wir nutzen für dieses Tutorial den Roman "Heidis Lehr- und Wanderjahre" von Johanna Spyri, der im TextGrid-Repositorium in verschienden Formaten [zum Download angeboten wird](https://textgridrep.org/search?query=heidi&order=&limit=).
+
+
+## 2.1. Text vorbereiten
 Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. erlaubt, das Auftreten und die Charakterisierung von Figuren im Verlauf der Handlung zu beschreiben. Die Zerlegung in Kapitel folgt dabei der Überlegung, dass die Einteilung in Kapitel in konventionellen Romanen in einer Beziehung zum Handlungsfortschritt steht. Dies kann beim ausgewählten Text unterstellt werden, da er eine fortschreitende Handlung erzählt, also z. B. keines der Kapitel einen Rückblick auf vorangegangene Ereignisse bietet.
 
 Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor" class="default_text_color">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
@@ -86,27 +84,37 @@ Das Suchergebnis kann bequem kopiert und in eine neue Datei eingefügt werden. U
 **Hilfen zu regulären Ausdrücken:** Online stehen zahlreiche Tutorials, z. B. [Regular Expressions info (auf Englisch)](https://www.regular-expressions.info/quickstart.html), [SELFHTML (auf Deutsch)](https://wiki.selfhtml.org/wiki/Regul%C3%A4rer_Ausdruck) und Testumgebungen, z. B. [regex101 (auf Englisch)](https://regex101.com/), [regexr (auf Englisch)](https://regexr.com/) für reguläre Ausdrücke zur Verfügung.
 
 
-# 4. Text analysieren
+# 3. Text analysieren
 
 Die Analyse des Textes wird in zwei großen Schritten durchgeführt, die jeweils eine Anzahl von Teilschritten enthalten. Der erste große Schritt ist die [automatische Analyse](#automatische-analyse), an dessem Ende der Text in annotierter, also mit Zusatzinformation versehener, Form vorliegt. Um Personenbezeichnungen automatisch erkennen zu können, muss der Text in einzelne Wortformen (= Tokens) zerlegt werden. Es bietet sich an, auch eine Lemmatisierung durchzuführen, also jede Wortform mit der Zusatzinformation zu versehen, von welcher Grundform sie abgeleitet wurde: Das Lemma der Worform _ging_ ist in diesem Sinne _gehen_. Im Anschluss folgt die _named entity regocnition_ (NER), die neben Institutionen auch Personenennamen erkennt und markiert. Im [zweiten Schritt](#manuelle-bw-semi-automatische-analyse) werden die Zusatzinformationen dazu genutzt, die im Roman vorkommenden Figuren zu identifizieren. Für die 
 
-## Automatische Analyse und Annotation
+## 3.1. Automatische Analyse und Annotation
 
 Für die automatische Annotation von Text steht eine [Vielzahl von Werkzeugen](https://www.clariah.de/ueber-uns/diensteliste) zur Verfügung. Unsere Forschungsfrage erfordert es, den annotierten Text durchsuchen zu können. Zusätzlich zu den Annotationswerkzeugen benötigen wir also auch eine zusätzliche Software, die dies leistet. 
 
-<div class="todo_must">
-TODO: 
-- Screenshot von Weblicht-Chain einfügen und kurz erläutern
-  </div>
+Da es fast so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der browserbasierte Service [WebLicht](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page), der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über [WebLicht as a service](https://weblicht.sfs.uni-tuebingen.de/WaaS/) realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. [CQPweb](https://cwb.sourceforge.io/cqpweb.php)).
 
-Da es fast so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge selbst, bietet es sich an, bei der Suche nach geeigneter Software gleich im Blick zu behalten, dass der annotierte Text nur ein Zwischenergebnis ist. Eine der bequemsten Möglichkeiten, die alle Anforderungen erfüllt, ist der Service [WebLicht](https://weblicht.sfs.uni-tuebingen.de/weblichtwiki/index.php/Main_Page), der für Angehörige von Forschungseinrichtungen kostenlos genutzt werden kann. Für sehr große Korpora, also z. B. Zeitungskorpora, die aus Tausenden von Einzeltexten bestehen können, sind andere Dienste eventuell besser geeignet. Die Annotation kann zwar durchaus auch bei einer Vielzahl an Texten über [WebLicht as a service](https://weblicht.sfs.uni-tuebingen.de/WaaS/) realisiert werden, es ist in einem solchen Fall jedoch vorteilhaft ein anderes (evtl. selbst gehostetes) Korpusverwaltungssystem zu nutzen (z. B. [CQPweb](https://cwb.sourceforge.io/cqpweb.php)).
+Nach der Anmeldung über den Institutionszugang zeigt die browserbasierten WebLicht-Version einen Startbildschirm, auf dem durch Klicken auf "Start" das Upload-Formular aufgerufen werden kann.
 
+{% include image.html images/weblicht_1_upload.png" description="Upload eines Textes auf WebLicht" %}
 
-## Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen
+Im Anschluss kann ausgewählt werden, ob eine vordefinierte Werkzeugkette ("Chains") benutzt werden soll ("Easy Mode") oder ob die Werkzeuge einzeln vom Nutzer zusammengestellt werden sollen ("Advanced Mode").
+
+{% include image.html images/weblicht_2_choose_mode.png" description="Upload eines Textes auf WebLicht" %}
+
+Wir nutzen für den ersten Teil des Tutorials die vordefinierte Kette für die _Named Entity Recognition_ (NER):
+
+{% include image.html images/weblicht_3_easy_mode_ner_chain.png" description="Auswahl einer Werkzeugkette" %}
+
+Nachdem alle Werkzeuge in der angegebenen Reihenfole angewendet wurden, kann der annotierte Text direkt online durchsucht oder heruntergeladen werden:
+
+{% include image.html images/weblicht_4_view_and_download_results.png" description="Analyse in WebLicht mit Downloadmöglichkeiten" %}
+
+## 3.2. Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen
 
 Das annotierte Korpus ist die Grundlage für die Bearbeitung der Forschungsfrage. Durch die Zusatzinformationen können wir nun z. B. direkt eine Liste aller Wörter ausgeben lassen, die von der _Named Entity Recognition_ als Person erkannt wurden (s. [Figuren identifizieren](#figuren-identifizieren)). Darüber hinaus können wir die Textumgebung der Wörter, die als Person erkannt werden, in die Analyse mit einbeziehen. Auf diese Weise können wir z. B. prüfen, ob vielleicht unterschiedliche Personen mit demselben Nachnamen existieren (s. [Zwischenergebnis verfeinern](#zwischenergenis-verfeinern)) und wie die Figuren durch den Ko-Text charakterisiert werden (s. [Aussagen über Figuren erheben](#aussagen-über-figuren-erheben)). Wir beschränken uns dabei auf die häufigsten Figuren.
 
-### Figuren identifizieren
+### 3.2.1. Figuren identifizieren
 Das annotierte Korpus kann direkt nach der automatischen Annotation in WebLicht genutzt oder in [TüNDRA](https://weblicht.sfs.uni-tuebingen.de/Tundra/), der _Tübingen aNnotated Data Retrieval Application_ geladen und dort durchsucht werden. 
 
 {% include image.html url="images/tundra_upload_tcf_annotated_corpus.png" description="Upload eines eigenen Korpus im TCF-Format in TÜNDRA" %}
@@ -127,7 +135,7 @@ Werden weitere Spalten hinzugefügt, werden die ausgewählten Kategorien in der 
 
 {% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige, welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
 
-### Zwischenergebnis 1
+### 3.2.2. Zwischenergebnis 1
 
 Die Liste aller als _PER_ getaggten Wörter ist die Grundlage für das Figurenverzeichnis. Da sie auf Token, also Wortformen beruht, werden manche Namen in flektierter Form extra aufgelistet (z. B. "Heidi" und "Heidis"). Ein bereinigtes Figurenverzeichnis könnte also so aussehen:
 * Heidi
@@ -135,7 +143,7 @@ Die Liste aller als _PER_ getaggten Wörter ist die Grundlage für das Figurenve
 * Sesemann
 ...
 
-### Zwischenergebnis verfeinern
+### 3.2.3. Zwischenergebnis verfeinern
 
 Da es sich bei "Rottenmeier" und "Sesemann" um Nachnamen handelt, wäre es von Vorteil, hier noch einen Vornamen oder zumindest eine Anredeform hinzuzufügen. Ein Blick in die Konkordanzen von `[token="Rottenmeier"]` zeigt, dass "Rottenmeier" praktisch immer ein "Fräulein" vorausgeht. Diese These kann überprüft werden, indem die Suchabfrage um ein vorangestelltes "Fräulein" erweitert wird. In der hier verwendeten Anfragesprache wird dies realisiert, indem die Anfragen nach "Fräulein" und "Rotttenmeier" in der richtigen Reihenfolge durch einen Punkt verknüpft werden: `[token="Fräulein"] . [token="Rottenmeier"]`
 
@@ -153,7 +161,7 @@ Dieselben Schritte gilt es nun für "Sesemann" und alle anderen potenziellen Ein
 
 Die Tabelle unter "Statistics" zeigt, welche Wörter wie oft vor "Sesemann" auftreten. Wir wissen nun also, dass die Einträge im Figurenverzeichnis um "Frau Sesemann", "Herr Sesemann" und "Klara Sesemann" erweitert werden können. Der folgende Ausschnitt aus den Konkordanzen zeigt eine Form im Genitiv und eine Verwendung einer Phrase die "Hause Sesemann" enthält. "Hause" und "Hauses" gehen "Sesemann" insgesamt elf Mal voraus. Es gibt also mindestens elf Fundstellen für "Sesemann(s)", die nicht direkt einer der Figuren zugeordnet werden können. Für das folgende Zwischenergebnis spielt dies erst einmal keine Rolle.
 
-### Zwischenergebnis 2
+### 3.2.4. Zwischenergebnis 2
 
 1. Heidi
 2. Fräulein Rottenmeier
@@ -167,7 +175,7 @@ Diese Liste zeigt nicht nur, dass die Vorgehensweise erfolgreich ist, sie zeigt 
 
 Die Häufigkeit, mit der bestimmte Ausdrücke in einem Text verwendet werden, lässt erste Rückschlüsse darauf zu, worum es in diesem Text geht. Die Abfrage der Häufigkeiten aller als "PER" getaggter Wörter zeigt, dass Heidi 701 mal direkt genannt wird (647 als "Heidi", 54 als "Heidis") und damit die am häufigsten genannte Figur im Text ist. Nach dieser Liste ist Fräulein Rottenmeier die am zweithäufigsten genannte Figur (135 Nennungen); da der Großvater jedoch 198 mal genannt wird, verdrängt er sie von diesem Platz. 
 
-### Zwischenergebnis 3
+### 3.2.5. Zwischenergebnis 3
 
 Die bisherigen Anfragen liefern nicht nur Erkenntnisse über die Häufigkeit, mit der Figurenbezeichnungen verwendet werden. Da das Figurenverzeichnis nicht nur die Namen der Figuren, sondern auch Zusatzinformationen aus dem Text enthalten soll, ist es sinnvoll z. B. anhand der Konkordanzen können auch erste Thesen über den Charakter einer Figur zu bilden. Da nun mehr Informationen darzustellen sind, bietet sich die Tabellenform an.
 
@@ -177,7 +185,7 @@ Die Konkordanz, die zur Charakterisierung des Großvaters dient, gibt noch einen
 
 {% include image.html url="images/tundra_alm_oehi_grossvater_query_and_result.png" description="Suchergebnisse für _Alm-Öhi_, _Öhi_, _Alm-Öhis_, _Öhis_, _Großvater_ und _Großvaters_." %}
 
-### Verfeinerung der PER-Liste
+### 3.2.6. Verfeinerung der PER-Liste
 
 Es ist sinnvoll, die PER-Liste auf der Grundlage der bisherigen Erkenntnisse zu bereinigen, so dass
 + die unflektierten und flektierten Formen unter einem Eintrag zusammengefasst werden
@@ -206,7 +214,7 @@ Nach Einfügen einer Spalte "Nennform" und Ausblenden der Sortierspalten, sieht 
 
 {% include image.html url="images/tundra_per_cleaned_and_enhanced.png" description="Tabelle der häufigsten (> 100) Figurenbezeichnungen" %}
 
-### Kurzer Exkurs zu Worthäufigkeiten
+### 3.2.7. Kurzer Exkurs zu Worthäufigkeiten
 
 Absolute Häufigkeiten sind in korpusbasierten Textanalysen nur dann sinnvoll, wenn das gesamte Korpus aus genau einem Text besteht, wie es hier der Fall ist. Um aber z. B. Aussagen darüber zu treffen, ob der Name einer Hauptfigur eines Romans in Text A häufiger genannt wird als in Text B, müssen relative Häufigkeiten verwendet werden, da sonst z. B. unterschiedliche Textlängen nicht in den Vergleich einfließen. Textlängen werden üblicherweise durch die Gesamtanzahl der Tokens ausgedrückt. Um herauszufinden, aus wie vielen Tokens der vorliegende Text besteht, können wir nach allen Buchstabenketten auf der Token-Ebene suchen: `[token=/.+/]`
 
@@ -218,7 +226,7 @@ Der Text besteht aus insgesamt 60424 Tokens in 2285 Sätzen. Die häufigsten Tok
 
 Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausnahmslos in jedem Text vertreten, der den natürlichsprachlichen Konventionen folgt. Als durchaus auffällig kann angesehen werden, dass im vorliegenden Roman die Wortform "es" bereits auf dem fünften Platz auftaucht. Da zwei Ränge davon von Punktuationszeichen besetzt sind, diese in der angeführten Statistik jedoch nicht aufgeführt werden, ist im Vergleich "es" im Roman auf Platz 3, in der Auswertung der Nachrichtentexte jedoch erst auf Platz 16. Aufgrund unserer Textkenntnis wissen wir, dass "Heidi" durch "es" pronominalisiert wird, was also zum konventionellen Gebrauch von "es" hinzukommt und so (vermutlich) die Rangfolge stark beeinflusst. Eine genauere Untersuchung sprengt den Rahmen dieses Tutorials. Eine mögliche Vorgehensweise wäre, den gesamten Text daraufhin auszuwerten, wie häufig "es" als Pronominalisierung von "Heidi" verwendet wird.
 
-### Häufigkeitsverteilung der Figuren über den Text
+### 3.2.8. Häufigkeitsverteilung der Figuren über den Text
 
 Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Eine Figur, die nur in bestimmten Teilen eines Buches auftritt, spielt eine andere Rolle für das gesamte Buch, als eine Figur, die in jedem oder fast jedem Kapitel auftritt. Aber auch eine Figur, die in jedem Kapitel vorkommt, kann eine untergeordnete Rolle spielen. Daher ist es auch hier sinnvoll, die Häufigkeit, mit der eine Figur (bzw. ein Wort oder ein annotierte Kategorie wie _Per_) in einem bestimmten Textabschnitt genannt wird, in die Untersuchung der Verteilung einzubeziehen. Wenn aber z. B. nur das Personal eines bestimmten Textabschnittes bestimmt werden soll, genügt es zu prüfen, ob eine Figur genannt wird oder nicht. Wenn die Ergebnisse auch Rückschlüsse darauf zulässen, wie wichtig ein Ausdruck oder eine Kategorie für die Interpretation oder das Verstehen des Textabschnittes ist, muss die Häufigkeitsverteilung bestimmt werden. In diesem Zusammenhang werden die oben angesprochenen relativen Häufigkeiten auch für die Analyse eines einzelnen Textes wichtig, da nur so herausgefunden werden kann, ob eine Figur bzw. Ausdruck in einem Kapitel häufiger als in einem anderen genannt wird. Die relative Häufigkeit wird dabei als Verhältnis des gesuchten Ausdrucks zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt verstanden.
 
@@ -245,7 +253,7 @@ TODO
 </div>
 
 
-### Aussagen über Figuren erheben
+### 3.2.9. Aussagen über Figuren erheben
 
 Wie oben schon angedeutet, bieten Konkordanzen (die Textumgebung, in der Figuren genannt werden) eine gute Möglichkeit, mehr über einzelne Figuren zu erfahren. Die Möglichkeit, alle Konkordanzen ergebnisoffen zu lesen und zunächst kategorienfrei "interessante" Stellen zu markieren, ist vor allem dann sinnvoll, wenn der Gefahr entgegengewirkt werden soll, Kategorien zu verwenden, die aus irgendeinem Grund dem Text nicht angemessen sind. Ein eher formales Beispiel hierfür wäre eine Kategorisierung in "falsch" und "richtig" auf grammatischer Ebene, die die Pronominalisierung von "es" für "Heidi" als "falsch" annotieren würde. Ohne Perspektivierung, dass dies aus heutiger oder aus Sicht der Standardgrammatik falsch ist, wäre dies unangemessen. Angemessenheit der verwendeten Kategorien leitet sich ansonsten hauptsächlich aus der Fragestellung ab. Dementsprechend sind nur solche Kategorien angemessen, die es erlauben, die Fragestellung konstruktiv zu bearbeiten.
 
@@ -260,7 +268,7 @@ TODO:
 </div>
 
 
-# 5. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
+# 4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
 
 <div class="todo_must">
 TODO:
@@ -268,9 +276,9 @@ TODO:
 </div>
 
 
-## Erweiterungen
+# 5. Erweiterungen
 
-### Komplexere Abfragestrategien
+## 5.1. Komplexere Abfragestrategien
 
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
 
@@ -349,7 +357,7 @@ Das weitere Vorgehen hängt dann davon ab, in welcher Umgebung annotiert wurde u
 
 Wenn Texte in relevante Teile zerlegt werden, die z. B. ganze Textabschnitte umfassen, ist dies eine Art der strukturellen Annotation. Es kann daher durchaus lohnend sein, die Annotationen im XML-Format vorzunehmen oder als solche auszugeben und den strukturierten Text in ein Korpusverwaltungssystem wie [CQPWeb](https://cwb.sourceforge.io/cqpweb.php) zu importieren, da es in solchen Systemen möglich ist, Abfragen auf bestimmte Textteile zu beschränken oder aus bestimmten Textteilen Subkorpora zu erstellen.
 
-### Netzwerke von Figureninteraktionen
+## 5.2. Netzwerke von Figureninteraktionen
 <div class="todo">
 - Netzwerke 
   - welche Figuren treten häufig miteinander auf?
@@ -357,10 +365,17 @@ Wenn Texte in relevante Teile zerlegt werden, die z. B. ganze Textabschnitte umf
   - Netz aus Figuren und häufigsten Kollokationen
 </div>
 
-
-### XML-Ressource erstellen (statt Tabelle)
+## 5.3. Ergebnis als XML-Ressource erstellen (statt Tabelle)
 <div class="todo">
 - prüfen, ob es einen einfachen TEI-Standard für solche Ressourcen gibt
+</div>
+
+<div class="todo">
+  - Metadaten aus anderen Quellen (z. B. GND) etc.) einbinden (in Verzeichnis und/oder in Korpus)
+    - GND-Abfrage basteln
+      - curl https://lobid.org/gnd/search?q=Heidi -o "test_heidi_gnd.txt" findet zwar allerhand Zeug, darunter auch Verweise auf das Buch, mir ist aber noch nicht gelungen, die Abfrage auf die Figur "Heidi" zu beschränken
+      - Laut Wikipedia kann der Entitätentyp "Person" (Kürzel: "p") weiter unterteilt werden, wobei literarische Figuren als "pxl" codiert werden (s. https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entit%C3%A4tencodierung")
+      - wie dies als Filter eingesetzt wird, habe ich aber noch nicht verstanden
 </div>
 
 # 6. Übertragbarkeit auf andere Forschungsinteressen
