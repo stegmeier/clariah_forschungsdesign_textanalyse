@@ -61,7 +61,7 @@ Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. 
 Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor" class="default_text_color">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
 
 
-{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von &lt;strong&gt;Heidi&lt;/strong&gt; auf der Webseite von _Projekt Gutenberg_" %}
+{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von &lt;strong&gt;Heidi&lt;/strong&gt; auf der Webseite von <em>Projekt Gutenberg</em>" %}
 
 Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:
 
