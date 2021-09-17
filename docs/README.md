@@ -125,7 +125,7 @@ Nach dem Upload können über die Suchanfrage `[_ne="PER"]` alle Wörter angezei
 
 Das Ergebnis der Suchanfrage wird u. a. als Konkordanz dargestellt, also als eine Liste der gefundenen Wörter und ihren Fundstellen.
 
-{% include image.html url="images/tundra_result_conc_query_per.png" description="Konkordanz aller als _PER_ getaggten Wörter. Als Umgebung des Suchausdrucks wird der Satz angezeigt, in der er gefunden wurde." %}
+{% include image.html url="images/tundra_result_conc_query_per.png" description="Konkordanz aller als <em>PER</em>getaggten Wörter. Als Umgebung des Suchausdrucks wird der Satz angezeigt, in der er gefunden wurde." %}
 
 Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardeinstellung gibt WebLicht hier lediglich die Gesamtanzahl der Fundstellen an. Über die Option _Add/Remove Columns_ kann die Darstellung verfeinert werden (*_ne* wählt die Ebene der _Named Entity Recognition_ aus; _token_ wählt die Ebene der Wortformen aus):
 
@@ -157,7 +157,7 @@ Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im F
 
 Dieselben Schritte gilt es nun für "Sesemann" und alle anderen potenziellen Einträge vorzunehmen. Da die These "Rottenmeier" bezieht sich immer auf "Fräulein Rottenmeier" nur aufgrund von Vorwissen über den Text aufgestellt werden kann, bietet es sich, eine allgemeinere Anfrage zu formulieren, die einfach alle Wörter anzeigt, die direkt vor "Sesemann" auftreten und auch die Flektionsform "Sesemanns" berücksichtigen, die ja laut PER-Liste zweimal im Text auftritt. Da TüNDRA (bzw. auch der in WebLicht eingebaute Viewer) reguläre Ausdrücke unterstützt, ist es relativ einfach, eine Suchanfrage zu formulieren, die sowohl "Sesemann" als auch "Sesemanns" findet und statt "Fräulein" jedes beliebige Token davor als Ergebnis zurückliefert: `[token=/.+/] . [token=/Sesemann(s)?/]`. Die runden Klammern im Suchausdruck nach "Sesemann" erzeugen eine Gruppe (hier bestehend aus dem Buchstaben _s_) und das Fragezeichen legt fest, dass diese Gruppe "0 oder einmal" auftreten darf. 
 
-{% include image.html url="images/tundra_any_token_sesemann_query_and_result.png" description="Suchergebnisse für <em>beliebige Buchstabenkette</em> gefolgt von 'Sesemann'</em>" %}
+{% include image.html url="images/tundra_any_token_sesemann_query_and_result.png" description="Suchergebnisse für <em>beliebige Buchstabenkette gefolgt von 'Sesemann'</em>" %}
 
 Die Tabelle unter "Statistics" zeigt, welche Wörter wie oft vor "Sesemann" auftreten. Wir wissen nun also, dass die Einträge im Figurenverzeichnis um "Frau Sesemann", "Herr Sesemann" und "Klara Sesemann" erweitert werden können. Der folgende Ausschnitt aus den Konkordanzen zeigt eine Form im Genitiv und eine Verwendung einer Phrase die "Hause Sesemann" enthält. "Hause" und "Hauses" gehen "Sesemann" insgesamt elf Mal voraus. Es gibt also mindestens elf Fundstellen für "Sesemann(s)", die nicht direkt einer der Figuren zugeordnet werden können. Für das folgende Zwischenergebnis spielt dies erst einmal keine Rolle.
 
