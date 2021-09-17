@@ -245,13 +245,11 @@ Die Dateien müssen also entsprechend umbenannt werden (z. B. "01" statt "1" etc
 
 {% include image.html url="images/voyant_figurenverteilung_auf_kapitel.png" description="Verteilung der häufigsten Figuren (> 100) über die Kapitel" %}
 
-Der Darstellung ist deutlich zu entnehmen, dass "Heidi" rein häufigkeitsbasiert die Hauptfigur des Romans ist. Es ist auch gut zu sehen, dass der Großvater die Handlung sozusagen rahmt. Auch können ein paar Rückschlüsse auf den Interaktionsverlauf gezogen werden bzw. als These formuliert werden: _Heidi lernt im Laufe der Handlung verschiedene Figuren kennen, mit denen sie unterschiedlich stark in Kontakt steht._ Um sicherzustellen, dass dies der Fall ist, muss allerdings überprüft werden, ob das Buch eine einzige Handlung oder alternierende Handlungsstränge erzählt. Die Überprüfung kann anhand von Textlektüre oder durch Konkordanzanalyse geschehen, je nachdem, wie viel Text es zu bewältigen gilt.
+Der Darstellung ist deutlich zu entnehmen, dass "Heidi" rein häufigkeitsbasiert die Hauptfigur des Romans ist. Es ist auch gut zu sehen, dass der Großvater die Handlung sozusagen rahmt und im ersten Kapitel häufiger als Heidi genannt wird. Auch können ein paar Rückschlüsse auf den Interaktionsverlauf gezogen werden bzw. als These formuliert werden: _Heidi lernt im Laufe der Handlung verschiedene Figuren kennen, mit denen sie unterschiedlich stark in Kontakt steht._ Um sicherzustellen, dass dies der Fall ist, muss allerdings überprüft werden, ob das Buch eine einzige Handlung oder alternierende Handlungsstränge erzählt. Die Überprüfung kann anhand von Textlektüre oder durch Konkordanzanalyse geschehen, je nachdem, wie viel Text es zu bewältigen gilt. Ein Blick in den Text zeigt schnell, dass in Kapitel 6 Heidi im Hause Sesemann eintrifft und von da an erst einmal dort lebt. Das Buch folgt also einer einzigen Handlung mit Heidi als Hauptperson. Umso interessanter ist es, dass die Häufigkeitsverteilung in Kapitel 9 Herrn Sesemann als die am häufigsten genannte Figur zeigt und in Kapitel 12 sogar drei der hier berücksichtigten Figuren (Sebastian, Herr Sesemann und Fräulein Rottenmeier in absteigender Häufigkeit) häufiger als Heidi genannt werden. Wird auch Dete noch in die Auswahl aufgenommen, zeigt ihr Häufigkeitsverlauf, dass sie Heidi an die verschiedenen Figuren bzw. Figurenkonstellationen sozusagen weiterreicht. 
 
-<div class="todo_must">
-TODO
-- Voyant-Analyse ausführen und erläutern
-</div>
+{% include image.html url="images/voyant_figurenverteilung_mit_dete_auf_kapitel.png" description="Verteilung der häufigsten Figuren (> 100) und Dete über die Kapitel" %}
 
+Im ersten Kapitel ist sie noch vor dem Großvater die am häufigsten genannte Figur und verschwindet im zweiten Kapitel, während der Großvater an Häufigkeit (und damit Wichtigkeit) gewinnt. Im fünften und sechsten Kapitel taucht Dete wieder auf, um Heidi in Frankfurt bei Sesemanns unterzubringen, und verschwindet dann wieder, während Sebastian und Klara in Erscheinung treten und gemeinsam mit Fräulein Rottenmeier zum Stammpersonal werden.
 
 # 4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
 
@@ -261,12 +259,9 @@ Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen d
 
 Fasst man die Aussagen aus Konkordanzen und Häufigkeitsverteilungen zusammen, erhält man z. B. die folgenden Einträge für das Personenverzeichnis:
 
-Die fehlenden Figuren müssen in einer echten Untersuchung auf der Grundlage der gezeigten Methoden ergänzt werden. Dabei kann es auch sinnvoll sein, weitere Analysestrategien anzuwenden. Einige davon werden im folgenden Abschnitt kurz vorgestellt.
+{% include table_pers_final.html %}
 
-<div class="todo_must">
-TODO:
-- Wörterbuchartige Liste (als Tabelle, darin auch Häufigkeitsverlauf von Voyant verarbeiten)
-</div>
+Die fehlenden Figuren müssen in einer echten Untersuchung auf der Grundlage der gezeigten Methoden ergänzt werden. Dabei kann es auch sinnvoll sein, weitere Analysestrategien anzuwenden. Einige davon werden im folgenden Abschnitt kurz vorgestellt.
 
 
 # 5. Erweiterungen
