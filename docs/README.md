@@ -14,7 +14,6 @@
     - [3.2.6. Verfeinerung der PER-Liste](#326-verfeinerung-der-per-liste)
     - [3.2.7. Kurzer Exkurs zu Worthäufigkeiten](#327-kurzer-exkurs-zu-worthäufigkeiten)
     - [3.2.8. Häufigkeitsverteilung der Figuren über den Text](#328-häufigkeitsverteilung-der-figuren-über-den-text)
-    - [3.2.9. Aussagen über Figuren erheben](#329-aussagen-über-figuren-erheben)
 - [4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#4-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
 - [5. Erweiterungen](#5-erweiterungen)
   - [5.1. Komplexere Abfragestrategien](#51-komplexere-abfragestrategien)
@@ -230,7 +229,7 @@ Dass Funktionswörter die Liste anführen ist nicht verwunderlich. Sie sind ausn
 
 ### 3.2.8. Häufigkeitsverteilung der Figuren über den Text
 
-Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Eine Figur, die nur in bestimmten Teilen eines Buches auftritt, spielt eine andere Rolle für das gesamte Buch, als eine Figur, die in jedem oder fast jedem Kapitel auftritt. Aber auch eine Figur, die in jedem Kapitel vorkommt, kann eine untergeordnete Rolle spielen. Daher ist es auch hier sinnvoll, die Häufigkeit, mit der eine Figur (bzw. ein Wort oder ein annotierte Kategorie wie _Per_) in einem bestimmten Textabschnitt genannt wird, in die Untersuchung der Verteilung einzubeziehen. Wenn aber z. B. nur das Personal eines bestimmten Textabschnittes bestimmt werden soll, genügt es zu prüfen, ob eine Figur genannt wird oder nicht. Wenn die Ergebnisse auch Rückschlüsse darauf zulässen, wie wichtig ein Ausdruck oder eine Kategorie für die Interpretation oder das Verstehen des Textabschnittes ist, muss die Häufigkeitsverteilung bestimmt werden. In diesem Zusammenhang werden die oben angesprochenen relativen Häufigkeiten auch für die Analyse eines einzelnen Textes wichtig, da nur so herausgefunden werden kann, ob eine Figur bzw. Ausdruck in einem Kapitel häufiger als in einem anderen genannt wird. Die relative Häufigkeit wird dabei als Verhältnis des gesuchten Ausdrucks zur Anzahl aller Wörter im jeweiligen Kapitel gesetzt verstanden.
+Neben der Häufigkeit, mit der Figurenbezeichnungen auftreten, ist auch ihre Verteilung über den Text eine interessante Größe. Wenn z. B. nur das Personal eines bestimmten Textabschnittes bestimmt werden soll, genügt es zu prüfen, ob eine Figur genannt wird oder nicht. Eine Figur, die nur in bestimmten Teilen eines Buches auftritt, spielt eine andere Rolle für das gesamte Buch, als eine Figur, die in jedem oder fast jedem Kapitel auftritt. Aber auch eine Figur, die in jedem Kapitel vorkommt, kann eine untergeordnete Rolle spielen. Soll also nicht nur das Personal eines Textabschnittes bestimmt werden, sondern auch, wie wichtig eine Figur für diesen Textabschnitt ist, ist es sinnvoll, die Häufigkeit, mit der eine Figur (bzw. ein Wort oder ein annotierte Kategorie wie _Per_) in einem bestimmten Textabschnitt genannt wird, in die Untersuchung der Verteilung einzubeziehen (= Häufigkeitsverteilung). In diesem Zusammenhang werden die oben angesprochenen relativen Häufigkeiten auch für die Analyse eines einzelnen Textes wichtig, da nur so herausgefunden werden kann, ob eine Figur bzw. Ausdruck in einem Kapitel häufiger als in einem anderen genannt wird. Die relative Häufigkeit wird dabei als Verhältnis des gesuchten Ausdrucks zur Anzahl aller Wörter im jeweiligen Kapitel verstanden.
 
 Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten gefunden werden, um den Text zu zerlegen und so Aussagen darüber zu ermöglichen, wie häufig welche Figur wann genannt wird. Die Textanalyse-Umgebung [Voyant](https://voyant-tools.org) zerlegt ein Korpus, das aus einem einzigen Text besteht, standardmäßig in zehn Teile. Neben weiteren Werkzeugen zeigt es die Verteilung von Wörtern auf diese zehn Teile auf der Grundlage der relativen Häufigkeiten innerhalb der Abschnitte als Grafik:
 
@@ -246,20 +245,23 @@ Die Dateien müssen also entsprechend umbenannt werden (z. B. "01" statt "1" etc
 
 {% include image.html url="images/voyant_figurenverteilung_auf_kapitel.png" description="Verteilung der häufigsten Figuren (> 100) über die Kapitel" %}
 
+Der Darstellung ist deutlich zu entnehmen, dass "Heidi" rein häufigkeitsbasiert die Hauptfigur des Romans ist. Es ist auch gut zu sehen, dass der Großvater die Handlung sozusagen rahmt. Auch können ein paar Rückschlüsse auf den Interaktionsverlauf gezogen werden bzw. als These formuliert werden: _Heidi lernt im Laufe der Handlung verschiedene Figuren kennen, mit denen sie unterschiedlich stark in Kontakt steht._ Um sicherzustellen, dass dies der Fall ist, muss allerdings überprüft werden, ob das Buch eine einzige Handlung oder alternierende Handlungsstränge erzählt. Die Überprüfung kann anhand von Textlektüre oder durch Konkordanzanalyse geschehen, je nachdem, wie viel Text es zu bewältigen gilt.
+
 <div class="todo_must">
 TODO
 - Voyant-Analyse ausführen und erläutern
 </div>
 
 
-### 3.2.9. Aussagen über Figuren erheben
+# 4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
 
 Wie oben schon angedeutet, bieten Konkordanzen (die Textumgebung, in der Figuren genannt werden) eine gute Möglichkeit, mehr über einzelne Figuren zu erfahren. Die Möglichkeit, alle Konkordanzen ergebnisoffen zu lesen und zunächst kategorienfrei "interessante" Stellen zu markieren, ist vor allem dann sinnvoll, wenn der Gefahr entgegengewirkt werden soll, Kategorien zu verwenden, die aus irgendeinem Grund dem Text nicht angemessen sind. Ein eher formales Beispiel hierfür wäre eine Kategorisierung in "falsch" und "richtig" auf grammatischer Ebene, die die Pronominalisierung von "es" für "Heidi" als "falsch" annotieren würde. Ohne Perspektivierung, dass dies aus heutiger oder aus Sicht der Standardgrammatik falsch ist, wäre dies unangemessen. Angemessenheit der verwendeten Kategorien leitet sich ansonsten hauptsächlich aus der Fragestellung ab. Dementsprechend sind nur solche Kategorien angemessen, die es erlauben, die Fragestellung konstruktiv zu bearbeiten.
 
-Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. Hierauf wird unter [Erweiterungen](#5-erweiterungen) näher eingegangen
+Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. Hierauf wird unter [Erweiterungen](#5-erweiterungen) näher eingegangen. Auch die Häufigkeitsverteilungen von Figuren über den Text sind eine gute Möglichkeit, Aussagen über Figuren zu machen, wie wir im vorhergehenden Abschnitt gezeigt haben.
 
+Fasst man die Aussagen aus Konkordanzen und Häufigkeitsverteilungen zusammen, erhält man z. B. die folgenden Einträge für das Personenverzeichnis:
 
-# 4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
+Die fehlenden Figuren müssen in einer echten Untersuchung auf der Grundlage der gezeigten Methoden ergänzt werden. Dabei kann es auch sinnvoll sein, weitere Analysestrategien anzuwenden. Einige davon werden im folgenden Abschnitt kurz vorgestellt.
 
 <div class="todo_must">
 TODO:
