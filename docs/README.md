@@ -214,6 +214,8 @@ Nach Einfügen einer Spalte "Nennform" und Ausblenden der Sortierspalten, sieht 
 
 {% include image.html url="images/tundra_per_cleaned_and_enhanced.png" description="Tabelle der häufigsten (> 100) Figurenbezeichnungen" %}
 
+**Anmerkung zu der Häufigkeit von "Heidi":** Auf "Heidi" als Figur wird auch durch den Ausdruck "das Kind" Bezug genommen. Um die Häufigkeit, mit der dies geschieht jedoch verlässlich angeben zu können, muss jedes Vorkommen geprüft werden, ob nicht doch ein anderes Kind damit gemeint ist. Insgesamt wird die Phrase `[Artikel][Kind in allen Flektionsformen]` formuliert als `[pos="ART"] . [lemma="Kind"]` 226 Mal gefunden. In einer Untersuchung, die nicht nur Demonstrationszwecken dient, würde sich die Arbeit also nicht nur lohnen, sondern wäre eine Mindestanforderung.
+
 ### 3.2.7. Kurzer Exkurs zu Worthäufigkeiten
 
 Absolute Häufigkeiten sind in korpusbasierten Textanalysen nur dann sinnvoll, wenn das gesamte Korpus aus genau einem Text besteht, wie es hier der Fall ist. Um aber z. B. Aussagen darüber zu treffen, ob der Name einer Hauptfigur eines Romans in Text A häufiger genannt wird als in Text B, müssen relative Häufigkeiten verwendet werden, da sonst z. B. unterschiedliche Textlängen nicht in den Vergleich einfließen. Textlängen werden üblicherweise durch die Gesamtanzahl der Tokens ausgedrückt. Um herauszufinden, aus wie vielen Tokens der vorliegende Text besteht, können wir nach allen Buchstabenketten auf der Token-Ebene suchen: `[token=/.+/]`
@@ -275,11 +277,11 @@ TODO:
 
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
 
-<a name="strategie_1" class="default_text_color">Strategie 1</a>: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen, z. B.
+**<a name="strategie_1" class="default_text_color">Strategie 1</a>: Wortformen und/oder Lemmata zählen und auswerten, die in einem syntaktischen Verhältnis zum Suchwort stehen**, z. B.
    1. attributive Adjektive
    2. Prädikate inkl. Prädikativen in Sätzen, deren Subjekt die gesuchte Figur ist
 
-<a name="strategie_2" class="default_text_color">Strategie 2</a>: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird), z. B.
+**<a name="strategie_2" class="default_text_color">Strategie 2</a>: Wortformen und/oder Lemmata zählen und auswerten, die in der Nähe eines bestimmten Suchausdrucks auftreten (ohne dass das syntaktische Verhältnis zum Suchausdruck berücksichtig wird)**, z. B.
    1. Wörter im selben Satz wie die Figur
    2. Wörter, die in einem bestimmten Umkreis auftreten (z. B. 5 Wörter links und 5 Wörter rechts)
 
