@@ -96,19 +96,19 @@ Da es fast so viele Ausgabeformate von Annotationswerkzeugen gibt wie Werkzeuge 
 
 Nach der Anmeldung über den Institutionszugang zeigt die browserbasierten WebLicht-Version einen Startbildschirm, auf dem durch Klicken auf "Start" das Upload-Formular aufgerufen werden kann.
 
-{% include image.html images/weblicht_1_upload.png" description="Upload eines Textes auf WebLicht" %}
+{% include image.html url="images/weblicht_1_upload.png" description="Upload eines Textes auf WebLicht" %}
 
 Im Anschluss kann ausgewählt werden, ob eine vordefinierte Werkzeugkette ("Chains") benutzt werden soll ("Easy Mode") oder ob die Werkzeuge einzeln vom Nutzer zusammengestellt werden sollen ("Advanced Mode").
 
-{% include image.html images/weblicht_2_choose_mode.png" description="Upload eines Textes auf WebLicht" %}
+{% include image.html url="images/weblicht_2_choose_mode.png" description="Upload eines Textes auf WebLicht" %}
 
 Wir nutzen für den ersten Teil des Tutorials die vordefinierte Kette für die _Named Entity Recognition_ (NER):
 
-{% include image.html images/weblicht_3_easy_mode_ner_chain.png" description="Auswahl einer Werkzeugkette" %}
+{% include image.html url="images/weblicht_3_easy_mode_ner_chain.png" description="Auswahl einer Werkzeugkette" %}
 
 Nachdem alle Werkzeuge in der angegebenen Reihenfole angewendet wurden, kann der annotierte Text direkt online durchsucht oder heruntergeladen werden:
 
-{% include image.html images/weblicht_4_view_and_download_results.png" description="Analyse in WebLicht mit Downloadmöglichkeiten" %}
+{% include image.html url="images/weblicht_4_view_and_download_results.png" description="Analyse in WebLicht mit Downloadmöglichkeiten" %}
 
 ## 3.2. Manuelle bw. semi-automatische Analyse: Das annotierte Korpus nutzen
 
