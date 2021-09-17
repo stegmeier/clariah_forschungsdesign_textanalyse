@@ -15,11 +15,7 @@
     - [3.2.7. Kurzer Exkurs zu Worthäufigkeiten](#327-kurzer-exkurs-zu-worthäufigkeiten)
     - [3.2.8. Häufigkeitsverteilung der Figuren über den Text](#328-häufigkeitsverteilung-der-figuren-über-den-text)
 - [4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen](#4-figurenverzeichnis-aus-ergebnissen-der-textanalyse-erstellen)
-- [5. Erweiterungen](#5-erweiterungen)
-  - [5.1. Komplexere Abfragestrategien](#51-komplexere-abfragestrategien)
-  - [5.2. Netzwerke von Figureninteraktionen](#52-netzwerke-von-figureninteraktionen)
-  - [5.3. Ergebnis als XML-Ressource erstellen (statt Tabelle)](#53-ergebnis-als-xml-ressource-erstellen-statt-tabelle)
-- [6. Übertragbarkeit auf andere Forschungsinteressen](#6-übertragbarkeit-auf-andere-forschungsinteressen)
+- [5. Erweiterungen: Komplexere Abfragestrategien](#5-erweiterungen-komplexere-abfragestrategien)
 
 # 1. Kurzbeschreibung
 
@@ -33,13 +29,6 @@ Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusamme
 Neben der Untersuchung von Konkordanzen sind auch komplexere Such- und Analysestrategien sinnvoll. Auf diese wird unter [Erweiterungen](#5-erweiterungen) eingegangen.
 
 Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden. Hierauf wird im [letzen Abschnitt](#6-übertragbarkeit-auf-andere-forschungsinteressen) noch einmal eingegangen. 
-
-<div class="todo">
-TODO:
-<ul>
-<li>Am Ende Vorüberlegungen noch einmal auf Vollständigkeit prüfen</li>
-</ul>
-</div>
 
 # 2. Text finden
 
@@ -264,9 +253,7 @@ Fasst man die Aussagen aus Konkordanzen und Häufigkeitsverteilungen zusammen, e
 Die fehlenden Figuren müssen in einer echten Untersuchung auf der Grundlage der gezeigten Methoden ergänzt werden. Dabei kann es auch sinnvoll sein, weitere Analysestrategien anzuwenden. Einige davon werden im folgenden Abschnitt kurz vorgestellt.
 
 
-# 5. Erweiterungen
-
-## 5.1. Komplexere Abfragestrategien
+# 5. Erweiterungen: Komplexere Abfragestrategien
 
 Die Auswertung von attributiven Adjektiven und von Ko-Okkurrenzen gehören unterschiedlichen Strategien an:
 
@@ -344,35 +331,3 @@ Der Text muss auf die inhaltlichen Kriterien hin annotiert werden um die relevan
 Das weitere Vorgehen hängt dann davon ab, in welcher Umgebung annotiert wurde und welche Auswertungsmöglichkeiten die jeweilige Plattform bietet. INCEpTION erlaubt z. B. den Import von TCF-Dateien (= Standardausgabeformat von WebLicht) oder auch die Einbindung von WebLicht-Tools. Alle Annotationsebenen können in INCEpTION über Korpussuchen angesprochen werden. Die relevanten Textteile können aber auch als Subkorpus aus der Annotationsplattform extrahiert und dann in WebLicht als neues Korpus analysiert werden. Sollen die relevanten Textteile geparst werden, ist es jedoch wichtig, möglichst immer vollständige Sätze zu extrahieren.
 
 Wenn Texte in relevante Teile zerlegt werden, die z. B. ganze Textabschnitte umfassen, ist dies eine Art der strukturellen Annotation. Es kann daher durchaus lohnend sein, die Annotationen im XML-Format vorzunehmen oder als solche auszugeben und den strukturierten Text in ein Korpusverwaltungssystem wie [CQPWeb](https://cwb.sourceforge.io/cqpweb.php) zu importieren, da es in solchen Systemen möglich ist, Abfragen auf bestimmte Textteile zu beschränken oder aus bestimmten Textteilen Subkorpora zu erstellen.
-
-## 5.2. Netzwerke von Figureninteraktionen
-<div class="todo">
-- Netzwerke 
-  - welche Figuren treten häufig miteinander auf?
-  - welche Wörter treten häufig mit welcher Figur auf?
-  - Netz aus Figuren und häufigsten Kollokationen
-</div>
-
-## 5.3. Ergebnis als XML-Ressource erstellen (statt Tabelle)
-<div class="todo">
-- prüfen, ob es einen einfachen TEI-Standard für solche Ressourcen gibt
-</div>
-
-<div class="todo">
-  - Metadaten aus anderen Quellen (z. B. GND) etc.) einbinden (in Verzeichnis und/oder in Korpus)
-    - GND-Abfrage basteln
-      - curl https://lobid.org/gnd/search?q=Heidi -o "test_heidi_gnd.txt" findet zwar allerhand Zeug, darunter auch Verweise auf das Buch, mir ist aber noch nicht gelungen, die Abfrage auf die Figur "Heidi" zu beschränken
-      - Laut Wikipedia kann der Entitätentyp "Person" (Kürzel: "p") weiter unterteilt werden, wobei literarische Figuren als "pxl" codiert werden (s. https://de.wikipedia.org/wiki/Gemeinsame_Normdatei#Entit%C3%A4tencodierung")
-      - wie dies als Filter eingesetzt wird, habe ich aber noch nicht verstanden
-</div>
-
-# 6. Übertragbarkeit auf andere Forschungsinteressen
-
-
-<div class="todo_must">
-TODO:
-- vor allem darauf hinweisen, dass die quantitativen Abfragen auch zu Beginn eines Vorhabens ausgeführt werden können, um Suchausdrücke zu identifizieren, die von Interesse für die Fragestellung sind (Baker's semantisch klassifizierte Wortformen, Lemma-Liste von Heidi)
-- kurz zeigen, dass die Vorgehensweise immer angewendet werden kann, wenn es um Begriffsbestimmung im weitesten Sinn geht
-- auf Annotationslehrpfad verweisen
-- evtl. Bakers Fuchsjagd kurz als Beispiel dafür zeigen, dass auch hier Ko-Text-Analysen (gepaart mit Metadaten) die Grundlage der Vorgehensweise bilden 
-</div>
