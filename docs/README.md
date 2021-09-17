@@ -242,6 +242,10 @@ In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Te
 
 {% include image.html url="images/voyant_chapter_corp_wrong_order.png" description="Unerwartete Kapitelreihenfolge in Voyant aufgrund nicht-numerischer Interpretation der Zahlen in den Dateinamen" %}
 
+Die Dateien müssen also entsprechend umbenannt werden (z. B. "01" statt "1" etc.). Ist dies geschehen, stellt Voyant die Ergebnisse in der richtigen Reihenfolge dar:
+
+{% include image.html url="images/voyant_figurenverteilung_auf_katpitel.png" description="Unerwartete Kapitelreihenfolge in Voyant aufgrund nicht-numerischer Interpretation der Zahlen in den Dateinamen" %}
+
 <div class="todo_must">
 TODO
 - Voyant-Analyse ausführen und erläutern
@@ -252,15 +256,7 @@ TODO
 
 Wie oben schon angedeutet, bieten Konkordanzen (die Textumgebung, in der Figuren genannt werden) eine gute Möglichkeit, mehr über einzelne Figuren zu erfahren. Die Möglichkeit, alle Konkordanzen ergebnisoffen zu lesen und zunächst kategorienfrei "interessante" Stellen zu markieren, ist vor allem dann sinnvoll, wenn der Gefahr entgegengewirkt werden soll, Kategorien zu verwenden, die aus irgendeinem Grund dem Text nicht angemessen sind. Ein eher formales Beispiel hierfür wäre eine Kategorisierung in "falsch" und "richtig" auf grammatischer Ebene, die die Pronominalisierung von "es" für "Heidi" als "falsch" annotieren würde. Ohne Perspektivierung, dass dies aus heutiger oder aus Sicht der Standardgrammatik falsch ist, wäre dies unangemessen. Angemessenheit der verwendeten Kategorien leitet sich ansonsten hauptsächlich aus der Fragestellung ab. Dementsprechend sind nur solche Kategorien angemessen, die es erlauben, die Fragestellung konstruktiv zu bearbeiten.
 
-Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. 
-
-Einen ersten Eindruck können z. B. attributive Adjektive vermitteln, die sich direkt auf die Figur beziehen. Auch Wortformen bzw. Lemmata, die in einem bestimmten Umfeld (z. B. 5 Tokens links und 5 Tokens rechts) des Suchausdrucks auftreten (= Ko-Okkurrenzen), können thesenbildend wirken.
-
-<div class="todo_must">
-TODO:
-- attributive Adjektive zu ausgewählten Figuren abfragen
-- Kollokationen / Ko-Okkurrenzen im Fenster 5L/5R berechnen und prüfen, ob die Konkordanzen, die die meisten der häufigen Wörter enthalten aussagekräftige Beschreibungen der Figuren liefern
-</div>
+Wie wir eingangs dargestellt haben, soll das Personenverzeichnis auch Aussagen darüber treffen, wie eine Figur jeweils charakterisiert wird. Im Zusammenhang gelesene Konkordanzen sind hierfür sehr gut geeignet, wie die Charakterisierungen in [Zwischenergebnis 3](#zwischenergebnis-3) zeigen. Da es häufig zu zeitaufwendig ist, alle Konkordanzen zu lesen, können auch hier frequenzbasierte Strategien zum Einsatz kommen, indem für jede Figur geprüft wird, welche Wörter besonders häufig in ihrer Umgebung vorkommen. Hierauf wird unter [Erweiterungen](#5-erweiterungen) näher eingegangen
 
 
 # 4. Figurenverzeichnis aus Ergebnissen der Textanalyse erstellen
