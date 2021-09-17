@@ -44,11 +44,11 @@ TODO:
 
 # 2. Text finden
 
-Die Grundlage einer korpusbasierten Textanalyse ist ein Text in digitaler Form. Liegt der Text nur gedruckt vor, muss er gescannt und über OCR (_optical character recognition_) in maschinenlesbaren Text überführt werden. Das hierzu notwendige Vorgehen ist nicht Teil dieses Tutorials. Die OCR ist auch dann notwendig, wenn der Text zwar digitalisiert wurde, aber nur als eine Sammlung von Bildern vorliegt. Auch PDF-Dateien können ausschließlich aus Bildern bestehen. Ist dies für den gewünschten Text der Fall, muss auch hier die OCR durchgeführt werden. Auch PDFs, aus denen der Text extrahiert werden kann, sind nicht immer die beste Grundlage, da der Export in ein reines Textformat häufig Probleme bereitet. Die verbreitetsten Probleme sind dabei "harte" Zeilenumbrüche, fehlende Leerzeichen zwischen Zeilenumbrüchen, Inhalte aus Fuß- und/oder Kopfzeilen (Seitenzahlen, Autornamen, Titelangaben), die nach dem Export mitten im Text stehen und die Trennungszeichen am Zeilenende. Alle diese (und evtl. weitere) Phänomene müssen geprüft und bereinigt werden, bevor der Text weiterverarbeitet werden kann.
+Die Grundlage einer korpusbasierten Textanalyse ist ein Text in digitaler Form. Liegt der Text nur gedruckt vor, muss er gescannt und über OCR (_Optical Character Recognition_) in maschinenlesbaren Text überführt werden. Das hierzu notwendige Vorgehen ist nicht Teil dieses Tutorials. Die OCR ist auch dann notwendig, wenn der Text zwar digitalisiert wurde, aber nur als eine Sammlung von Bildern vorliegt. Auch PDF-Dateien können ausschließlich aus Bildern bestehen. Ist dies für den gewünschten Text der Fall, muss auch hier die OCR durchgeführt werden. Auch PDFs, aus denen der Text extrahiert werden kann, sind nicht immer die beste Grundlage, da der Export in ein reines Textformat häufig Probleme bereitet. Die verbreitetsten Probleme sind dabei "harte" Zeilenumbrüche, fehlende Leerzeichen zwischen Zeilenumbrüchen, Inhalte aus Fuß- und/oder Kopfzeilen (Seitenzahlen, Autornamen, Titelangaben), die nach dem Export mitten im Text stehen und die Trennungszeichen am Zeilenende. Alle diese (und evtl. weitere) Phänomene müssen geprüft und bereinigt werden, bevor der Text weiterverarbeitet werden kann.
 
-Es ist aus diesem Grund von Vorteil, bereits entsprechend aufbereitete Texte zu verwenden. Verschiedene Repositorien bieten inzwischen einen Fundus an solchen Quellen an. Das [TextGrid Repositorium](https://textgrid.de) bietet in seiner [Digitalen Bibliothek](https://textgrid.de/digitale-bibliothek) eine Vielzahl an Texten aus Literatur, Philosophie, Kulturgeschichte und weiteren Kategorien an. Der Schwerpunkt liegt mit über 90.000 Texten auf der (historischen) Literatur. Das [Deutsche Text-Archiv (DTA)](https://www.deutschestextarchiv.de/), bestehend aus einem Kernkorpus und einer Erweiterung (DTAE) bietet sowohl Texte zum Download an als auch die direkte [Nutzung des gesamten Bestands als Korpus](https://www.deutschestextarchiv.de/doku/DDC-suche_hilfe). Die Texte verteilen sich auf die folgenden Kategorien (s. auch [die Erläuterungen zur Textauswahl](https://www.deutschestextarchiv.de/doku/textauswahl)):
+Es ist aus diesem Grund von Vorteil, bereits entsprechend aufbereitete Texte zu verwenden. Verschiedene Repositorien bieten inzwischen einen Fundus an solchen Quellen an. Das [TextGrid Repositorium](https://textgrid.de) bietet in seiner [Digitalen Bibliothek](https://textgrid.de/digitale-bibliothek) eine Vielzahl an Texten aus Literatur, Philosophie, Kulturgeschichte und weiteren Kategorien an. Der Schwerpunkt liegt mit über 90.000 Texten auf der (historischen) Literatur. Das [Deutsche Text-Archiv (DTA)](https://www.deutschestextarchiv.de/), bestehend aus einem Kernkorpus und einer Erweiterung (DTAE) bietet sowohl Texte zum Download an als auch die direkte [Nutzung des gesamten Bestands als Korpus](https://www.deutschestextarchiv.de/doku/DDC-suche_hilfe). Die Texte verteilen sich auf die folgenden Kategorien (s. auch [die Erläuterungen zur Textauswahl](https://www.deutschestextarchiv.de/doku/textauswahl), denen die folgende Darstellung entnommen ist):
 
-{% include image.html url="images/dta_ueberblick.png" description="Zusammensetzung des DTA-Korpus" %}
+{% include image.html url="images/dta_ueberblick.png" description="Zusammensetzung des DTA-Korpus (Quelle: DTA)" %}
 
 Auch das [Projekt Gutenberg](https://www.projekt-gutenberg.org/) eignet sich sehr gut, um digitale Texte in verarbeitbarer Form zu finden. Es ist allerdings darauf ausgelegt, dass die Texte im Browser gelesen werden und bietet keine Downloadmöglichkeit.
 
@@ -61,7 +61,7 @@ Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. 
 Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor" class="default_text_color">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
 
 
-{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von _Heidi_ auf der Webseite von _Projekt Gutenberg_" %}
+{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von &lt;strong&gt;Heidi&lt;/strong&gt; auf der Webseite von _Projekt Gutenberg_" %}
 
 Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:
 
@@ -104,7 +104,7 @@ Im Anschluss kann ausgewählt werden, ob eine vordefinierte Werkzeugkette ("Chai
 
 Wir nutzen für den ersten Teil des Tutorials die vordefinierte Kette für die _Named Entity Recognition_ (NER):
 
-{% include image.html url="images/weblicht_3_easy_mode_ner_chain.png" description="Auswahl einer Werkzeugkette" %}
+{% include image.html url="images/weblicht_3_easy_mode_choose_ner_chain.png" description="Auswahl einer Werkzeugkette" %}
 
 Nachdem alle Werkzeuge in der angegebenen Reihenfole angewendet wurden, kann der annotierte Text direkt online durchsucht oder heruntergeladen werden:
 
@@ -119,7 +119,7 @@ Das annotierte Korpus kann direkt nach der automatischen Annotation in WebLicht 
 
 {% include image.html url="images/tundra_upload_tcf_annotated_corpus.png" description="Upload eines eigenen Korpus im TCF-Format in TÜNDRA" %}
 
-Nach dem Upload können über die Suchanfrage `[_ne="PER"]` alle Wörter angezeigt werden, die als _Person_ (Tag: _PER_) erkannt wurden. Zur verwendeten Anfragesprache gibt es ein [kleines Handbuch](https://weblicht.sfs.uni-tuebingen.de/Tundra/help) und ein [Tutorial](https://weblicht.sfs.uni-tuebingen.de/Tundra/tutorial).
+Nach dem Upload können über die Suchanfrage `[_ne="PER"]` alle Wörter angezeigt werden, die als _Person_ (Tag: _PER_) erkannt wurden. "_ne" spricht die Ebene der _Named Entiy Recognition_ an, "PER" wählt alle als Person getaggte Tokens aus. Zur verwendeten Anfragesprache gibt es ein [kleines Handbuch](https://weblicht.sfs.uni-tuebingen.de/Tundra/help) und ein [Tutorial](https://weblicht.sfs.uni-tuebingen.de/Tundra/tutorial).
 
 {% include image.html url="images/tundra_query_per.png" description="Suchanfrage, um alle mit _PER_ annotierten Wörter zu finden" %}
 
@@ -235,13 +235,6 @@ Wenn der Text nicht in Kapitel zerlegt vorliegt, müssen andere Möglichkeiten g
 {% include image.html url="images/voyant_characters_dispersion_fulltext_corpus.png" description="Verteilung der häufigsten Figuren auf den in Zehntel zerlegten Text in Voyant" %}
 
 Da wir den Text schon zu Beginn in Kapitel (= Teilkorpora) zerlegt haben, können wir die Häufigkeitsverteilung auf dieser Grundlage untersuchen. WebLicht bzw. TüNDRA hierfür zu nutzen, ist ein wenig umständlich, da jeder Text einzeln als Korpus geladen und durchsucht werden muss. Wenn eine sehr große Menge an Teilkorpora vorliegt, ist es besser, ein Korpusverwaltungssystem wie CQPweb, oder einen Service wie [Voyant](https://voyant-tools.org) zu nutzen. 
-
-<div class="todo">
-Im Folgenden wird an zwei Kapiteln demonstriert, wie die Aufgabe mit TüNdra gelöst werden kann. Die Analyse aller Kapitel wird mit Voyant gezeigt.
-TODO:
-- zwei Kapitel zur Demonstration relativer Häufigkeiten in WebLicht untersuchen
-- relative Häufigkeiten (zu allen Tokens) von Heidi etc. berechnen  
-</div>
 
 In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Texten geladen werden. Dies erlaubt es auch, die Verteilung der Figurennennungen kapitelweise zu visualisieren. Allerdings muss hierfür die Benennung der Dokumente so angepasst werden, dass die Kapitelzählung richtig interpretiert wird. Wird dies nicht getan, erhält man beispielsweise folgendes Ergebnis:
 
