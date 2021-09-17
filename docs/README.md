@@ -61,7 +61,7 @@ Es bietet sich an, einen Roman in Kapitel zerlegt zu analysieren, da dies z. B. 
 Die Zerlegung von reinem Text ist je nach Größe auch manuell recht schnell machbar, wenn hierfür ein Text-Editor zur Verfügung steht, der die Suche nach regulären Ausdrücken erlaubt. <a name="texteditor" class="default_text_color">In Frage kommen z. B.</a> [Sublime Text](https://www.sublimetext.com/), [Notepad++](http://notepad-plus-plus.org/) oder [VS Code](https://code.visualstudio.com/). Um bequem nach den Kapitelanfängen und -enden suchen zu können, ist es von großem Vorteil, die Titel der Kapitel zu kennen. Eine kurze Suche bei z. B. [Projekt Gutenberg](https://www.projekt-gutenberg.org/spyri/heidi1/index.html) (oder einer Bibliothek der Wahl) bringt bereits ein brauchbares Ergebnis:
 
 
-{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von &lt;strong&gt;Heidi&lt;/strong&gt; auf der Webseite von <em>Projekt Gutenberg</em>" %}
+{% include image.html url="images/heidi_kapitel_projekt_gutenberg.png" description="Inhaltsverzeichnis von <em>Heidi</em> auf der Webseite von Projekt Gutenberg" %}
 
 Die Suche nach den einzelnen Kapiteln lässt sich als regulärer Ausdruck nun folgendermaßen formulieren:
 
@@ -121,7 +121,7 @@ Das annotierte Korpus kann direkt nach der automatischen Annotation in WebLicht 
 
 Nach dem Upload können über die Suchanfrage `[_ne="PER"]` alle Wörter angezeigt werden, die als _Person_ (Tag: _PER_) erkannt wurden. "_ne" spricht die Ebene der _Named Entiy Recognition_ an, "PER" wählt alle als Person getaggte Tokens aus. Zur verwendeten Anfragesprache gibt es ein [kleines Handbuch](https://weblicht.sfs.uni-tuebingen.de/Tundra/help) und ein [Tutorial](https://weblicht.sfs.uni-tuebingen.de/Tundra/tutorial).
 
-{% include image.html url="images/tundra_query_per.png" description="Suchanfrage, um alle mit _PER_ annotierten Wörter zu finden" %}
+{% include image.html url="images/tundra_query_per.png" description="Suchanfrage, um alle mit <em>PER</em> annotierten Wörter zu finden" %}
 
 Das Ergebnis der Suchanfrage wird u. a. als Konkordanz dargestellt, also als eine Liste der gefundenen Wörter und ihren Fundstellen.
 
@@ -129,11 +129,11 @@ Das Ergebnis der Suchanfrage wird u. a. als Konkordanz dargestellt, also als ein
 
 Die Suchergebnisse werden auch als aggregierte Liste dargestellt. Als Standardeinstellung gibt WebLicht hier lediglich die Gesamtanzahl der Fundstellen an. Über die Option _Add/Remove Columns_ kann die Darstellung verfeinert werden (*_ne* wählt die Ebene der _Named Entity Recognition_ aus; _token_ wählt die Ebene der Wortformen aus):
 
-{% include image.html url="images/tundra_refine_stats_query_per.png" description="Spalte *_ne* und _token_ in der Statistik-Tabelle hinzufügen." %}
+{% include image.html url="images/tundra_refine_stats_query_per.png" description="Spalte <em>_ne</em> und <em>token</em> in der Statistik-Tabelle hinzufügen." %}
 
 Werden weitere Spalten hinzugefügt, werden die ausgewählten Kategorien in der Zählung berücksichtigt.
 
-{% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige, welche Wörter als _PER_ getaggt wurden und wie häufig sie im Korpus auftreten." %}
+{% include image.html url="images/tundra_result_refined_stats_query_per.png" description="Anzeige, welche Wörter als <em>PER</em> getaggt wurden und wie häufig sie im Korpus auftreten." %}
 
 ### 3.2.2. Zwischenergebnis 1
 
@@ -147,17 +147,17 @@ Die Liste aller als _PER_ getaggten Wörter ist die Grundlage für das Figurenve
 
 Da es sich bei "Rottenmeier" und "Sesemann" um Nachnamen handelt, wäre es von Vorteil, hier noch einen Vornamen oder zumindest eine Anredeform hinzuzufügen. Ein Blick in die Konkordanzen von `[token="Rottenmeier"]` zeigt, dass "Rottenmeier" praktisch immer ein "Fräulein" vorausgeht. Diese These kann überprüft werden, indem die Suchabfrage um ein vorangestelltes "Fräulein" erweitert wird. In der hier verwendeten Anfragesprache wird dies realisiert, indem die Anfragen nach "Fräulein" und "Rotttenmeier" in der richtigen Reihenfolge durch einen Punkt verknüpft werden: `[token="Fräulein"] . [token="Rottenmeier"]`
 
-{% include image.html url="images/tundra_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für _Fräulein Rottenmeier_." %}
+{% include image.html url="images/tundra_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für <em>Fräulein Rottenmeier</em>." %}
 
 Allerdings stimmt die Anzahl der Fundstellen nicht überein: "Rottenmeier" kommt 135 mal im Korpus vor, "Fräulein Rottenmeier" jedoch nur 127 mal. Es muss also acht Okkurrenzen von "Rottenmeier" geben, denen ein anderes Wort als "Fräulein" vorangeht. Um diese zu finden, muss also die Suchanfrage `[token="Fräulein"] . [token="Rottenmeier"]` so manipuliert werden, dass alle Okkurrenzen von _Nicht "Fräulein" gefolgt von "Rottenmeier"_ gefunden werden. Als Suchanfrage formuliert sieht das so aus: `[token!="Fräulein"] . [token="Rottenmeier"]`. Die Kombination aus Ausrufezeichen und Gleichheitszeichen wird als "nicht gleich" interpretiert. Das Ergebnis der Anfrage ist:
 
-{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für &quot;Nicht 'Fräulein' gefolgt von 'Rottenmeier'." %}
+{% include image.html url="images/tundra_not_fraeulein_rottenmeier_query_and_result.png" description="Suchergebnisse für <em>Nicht 'Fräulein' gefolgt von 'Rottenmeier'</em>." %}
 
 Da nun alle 135 Vorkommen von "Rottenmeier" geprüft sind, kann der Eintrag im Figurenverzeichnis in "Fräulein Rottenmeier" geändert werden. 
 
 Dieselben Schritte gilt es nun für "Sesemann" und alle anderen potenziellen Einträge vorzunehmen. Da die These "Rottenmeier" bezieht sich immer auf "Fräulein Rottenmeier" nur aufgrund von Vorwissen über den Text aufgestellt werden kann, bietet es sich, eine allgemeinere Anfrage zu formulieren, die einfach alle Wörter anzeigt, die direkt vor "Sesemann" auftreten und auch die Flektionsform "Sesemanns" berücksichtigen, die ja laut PER-Liste zweimal im Text auftritt. Da TüNDRA (bzw. auch der in WebLicht eingebaute Viewer) reguläre Ausdrücke unterstützt, ist es relativ einfach, eine Suchanfrage zu formulieren, die sowohl "Sesemann" als auch "Sesemanns" findet und statt "Fräulein" jedes beliebige Token davor als Ergebnis zurückliefert: `[token=/.+/] . [token=/Sesemann(s)?/]`. Die runden Klammern im Suchausdruck nach "Sesemann" erzeugen eine Gruppe (hier bestehend aus dem Buchstaben _s_) und das Fragezeichen legt fest, dass diese Gruppe "0 oder einmal" auftreten darf. 
 
-{% include image.html url="images/tundra_any_token_sesemann_query_and_result.png" description="Suchergebnisse für _beliebige Buchstabenkette gefolgt von 'Sesemann'_" %}
+{% include image.html url="images/tundra_any_token_sesemann_query_and_result.png" description="Suchergebnisse für <em>beliebige Buchstabenkette</em> gefolgt von 'Sesemann'</em>" %}
 
 Die Tabelle unter "Statistics" zeigt, welche Wörter wie oft vor "Sesemann" auftreten. Wir wissen nun also, dass die Einträge im Figurenverzeichnis um "Frau Sesemann", "Herr Sesemann" und "Klara Sesemann" erweitert werden können. Der folgende Ausschnitt aus den Konkordanzen zeigt eine Form im Genitiv und eine Verwendung einer Phrase die "Hause Sesemann" enthält. "Hause" und "Hauses" gehen "Sesemann" insgesamt elf Mal voraus. Es gibt also mindestens elf Fundstellen für "Sesemann(s)", die nicht direkt einer der Figuren zugeordnet werden können. Für das folgende Zwischenergebnis spielt dies erst einmal keine Rolle.
 
@@ -171,7 +171,7 @@ Die Tabelle unter "Statistics" zeigt, welche Wörter wie oft vor "Sesemann" auft
 
 Diese Liste zeigt nicht nur, dass die Vorgehensweise erfolgreich ist, sie zeigt bei näherer Betrachtung auch, dass Textkenntnis für bestimmte textanalytische Aufgaben unerlässlich ist. Denn wir wissen zwar, dass der Großvater eine wichtige Figur im Buch ist, er kommt in unserer Liste aber bisher nicht vor. Dies liegt vermutlich daran, dass der Named Entity Recognizer das Wort "Großvater" nicht als Person erkannt hat, weshalb es in unserer ursprünglichen Liste fehlt. Da "Großvater" auch flektiert als "Großvaters" auftreten kann, müssen wie also eine Suchanfrage formulieren, die beide Wortformen abdeckt. Hierfür eignet sich z. B. `[token=/Großvater(s)?/]`. Die Anfrage liefert 198 Treffer zurück:
 
-{% include image.html url="images/tundra_grossvater_query_and_result.png" description="Suchergebnisse für _Großvater_ und _Großvaters_." %}
+{% include image.html url="images/tundra_grossvater_query_and_result.png" description="Suchergebnisse für <em>Großvater</em> und <em>Großvaters</em>." %}
 
 Die Häufigkeit, mit der bestimmte Ausdrücke in einem Text verwendet werden, lässt erste Rückschlüsse darauf zu, worum es in diesem Text geht. Die Abfrage der Häufigkeiten aller als "PER" getaggter Wörter zeigt, dass Heidi 701 mal direkt genannt wird (647 als "Heidi", 54 als "Heidis") und damit die am häufigsten genannte Figur im Text ist. Nach dieser Liste ist Fräulein Rottenmeier die am zweithäufigsten genannte Figur (135 Nennungen); da der Großvater jedoch 198 mal genannt wird, verdrängt er sie von diesem Platz. 
 
@@ -183,7 +183,7 @@ Die bisherigen Anfragen liefern nicht nur Erkenntnisse über die Häufigkeit, mi
 
 Die Konkordanz, die zur Charakterisierung des Großvaters dient, gibt noch einen weiteren Hinweis. Der Kapitel-Titel "Beim Großvater" lässt vermuten, dass "Öhi" eine alternative Bezeichnung für die Figur "Großvater" ist. Eine kurze Recherche in den Konkordanzen bestätigt dies, weshalb die Häufigkeitsangabe in der Tabelle oben korrigiert werden muss. Da wir bereits wissen, dass statt "Öhi" auch "Alm-Öhi" verwendet werden kann, müssen wir eine Suchanfrage formulieren, die die Ausdrücke "Alm-Öhi", "Öhi", "Großvater" und "Großvaters" findet: `[token=(/(Alm-)*Öhi(s)?/ | /Großvater(s)?/)]`. Diese Suchanfrage findet insgesamt 291 Fundstellen, also fast 100 mehr als die Anfrage für "Großvater(s)?"
 
-{% include image.html url="images/tundra_alm_oehi_grossvater_query_and_result.png" description="Suchergebnisse für _Alm-Öhi_, _Öhi_, _Alm-Öhis_, _Öhis_, _Großvater_ und _Großvaters_." %}
+{% include image.html url="images/tundra_alm_oehi_grossvater_query_and_result.png" description="Suchergebnisse für <em>Alm-Öhi</em>, <em>Öhi</em>, <em>Alm-Öhis</em>, <em>Öhis</em>, <em>Großvater</em> und <em>Großvaters</em>." %}
 
 ### 3.2.6. Verfeinerung der PER-Liste
 
