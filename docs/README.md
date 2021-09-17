@@ -244,7 +244,7 @@ In Voyant können nicht nur einzelne Texte, sondern auch Korpora aus mehreren Te
 
 Die Dateien müssen also entsprechend umbenannt werden (z. B. "01" statt "1" etc.). Ist dies geschehen, stellt Voyant die Ergebnisse in der richtigen Reihenfolge dar:
 
-{% include image.html url="images/voyant_figurenverteilung_auf_katpitel.png" description="Unerwartete Kapitelreihenfolge in Voyant aufgrund nicht-numerischer Interpretation der Zahlen in den Dateinamen" %}
+{% include image.html url="images/voyant_figurenverteilung_auf_kapitel.png" description="Verteilung der häufigsten Figuren (> 100) über die Kapitel" %}
 
 <div class="todo_must">
 TODO
