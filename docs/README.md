@@ -28,7 +28,7 @@ Das Forschungsdesign "korpusbasierte Textanalyse" zeigt beispielhaft das Zusamme
 
 Neben der Untersuchung von Konkordanzen sind auch komplexere Such- und Analysestrategien sinnvoll. Auf diese wird unter [Erweiterungen](#5-erweiterungen) eingegangen.
 
-Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden. Hierauf wird im [letzen Abschnitt](#6-übertragbarkeit-auf-andere-forschungsinteressen) noch einmal eingegangen. 
+Die hier dargestellte Vorgehensweise ist auf jede Forschungsfrage übertragbar, in der Begriffe dadurch bestimmt werden sollen, dass die Häufigkeit und der Ko-Text der auf sie verweisenden Ausdrücke analysiert werden.
 
 # 2. Text finden
 
